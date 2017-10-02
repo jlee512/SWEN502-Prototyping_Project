@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import org.junit.Test;
 
-public class testing {
+public class Testing {
 
 	/**
 	 * @author Madeleine St-Laurent-Guerin
