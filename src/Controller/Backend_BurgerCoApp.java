@@ -4,6 +4,7 @@ import Database.LocalSQLiteDB;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 
 /**
  * Created by Julian on 3/10/2017.
@@ -15,7 +16,7 @@ public class Backend_BurgerCoApp {
 //        app.addUsersToDB();
 
         //Employee_id and password input from Java FX
-        int employee_id = 4;
+        int employee_id = 1;
         String password_input = "test";
 
         Employee employee = null;
@@ -24,23 +25,42 @@ public class Backend_BurgerCoApp {
         try {
             app.verifyUserCredentials(employee_id, password_input);
             employee = Employee.getUserDB(employee_id);
+            //If successful login transition to employee screen
             System.out.println(employee.getEmpFirstName() + " " + employee.getEmpLastName() + " logged in");
         } catch (BadPasswordException e) {
-            //Java FX post error message "User credentials incorrect"
+            //Java FX post error message "User credentials incorrect" and remain on login screen
             System.out.println("User credentials could not be verified");
+            return;
         } catch (NonExistentUserException e) {
-            //Java FX post error message "User_id does not exist"
+            //Java FX post error message "User_id does not exist" and remain on login screen
             System.out.println("User does not exist");
+            return;
         }
 
         //Once logged in - display unfilled orders
         //TO DO
 
+        //And display the users orders
+        ArrayList<Order> employee_orders = employee.getUserToDoList();
+        if (employee_orders.size() == 0) {
+            System.out.println("No orders assigned to this staff member");
+        }
+        for (int i = 0; i < employee_orders.size(); i++) {
+            System.out.print("Order #" + employee_orders.get(i).getOrderID() + ": ");
+            for (int j = 0; j < employee_orders.get(i).getIngredients().size(); j++) {
+                if (j < (employee_orders.get(i).getIngredients().size() - 1)) {
+                    System.out.print(employee_orders.get(i).getIngredients().get(j) + ", ");
+                } else {
+                    System.out.println(employee_orders.get(i).getIngredients().get(j));
+                }
+            }
+        }
+
         //Employee can select unfilled orders to be responsible for (pushes retrieve button in Java FX)
-        employee.assignOrder(4);
+//        employee.assignOrder(4);
 
         //Employee can complete retrieved orders (pushes completed button in Java FX)
-        employee.completeOrder(4);
+//        employee.completeOrder(4);
     }
 
     public void addUsersToDB() {

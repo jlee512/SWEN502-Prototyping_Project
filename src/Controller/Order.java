@@ -9,18 +9,43 @@ public class Order {
 	int userPhone;
 	boolean orderComplete = false;
 	String timestamp;
-	ArrayList<Ingredient> ingredients;
+	ArrayList<String> ingredients;
 
-	public Order(int order_id, String alias, int userPhone, String timestamp, ArrayList<Ingredient> ingredients) {
+	public Order(int order_id) {
 		this.orderID = order_id;
-		this.userAlias = alias;
-		this.userPhone = userPhone;
-		this.timestamp = timestamp;
-		this.ingredients = ingredients;
+		this.ingredients = new ArrayList<>();
 	}
-	
+
+	public int getOrderID() {
+		return orderID;
+	}
+
+	public String getUserAlias() {
+		return userAlias;
+	}
+
+	public int getUserPhone() {
+		return userPhone;
+	}
+
+	public boolean isOrderComplete() {
+		return orderComplete;
+	}
+
+	public String getTimestamp() {
+		return timestamp;
+	}
+
+	public void addIngredient(String ingredientName) {
+		ingredients.add(ingredientName);
+	}
+
+	public ArrayList<String> getIngredients() {
+		return ingredients;
+	}
+
 	public void createOrder(){
-		//Create the order based on the input received from the GUI
+		//Create the order based on the input received from the GUI and add to DB
 	}
 	
 	public static Order getOrder(){
@@ -33,10 +58,6 @@ public class Order {
 	}
 	
 	public ArrayList<Order> getAllOrders(){
-		return null;
-	}
-
-	public ArrayList<Order> getAllOrdersByUser() {
 		return null;
 	}
 }

@@ -9,6 +9,10 @@ public class Ingredient {
 	String ingredientName;
 	double unitPrice;
 	int quantity;
+
+	public Ingredient() {
+
+	}
 	
 	public void reduceStock(){
 		//Remove the stock items from the database

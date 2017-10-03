@@ -90,7 +90,7 @@ public class Employee {
         }
     }
 
-    public void assignOrder(int order_id) {
+    public void assignOrder(Order order) {
         //Assign an order to the employee
         //Create database connection
         File database_file = new File("Burger.sqlite");
@@ -98,10 +98,10 @@ public class Employee {
         try (Connection c = db.connection()) {
             try (PreparedStatement stmt = c.prepareStatement("UPDATE Burger_Order SET employee_id = ? WHERE order_id = ?;")) {
                 stmt.setInt(1, employeeID);
-                stmt.setInt(2, order_id);
+                stmt.setInt(2, order.getOrderID());
 
                 stmt.executeUpdate();
-                System.out.println("User #" + employeeID +  " retrieving order " + order_id);
+                System.out.println("User #" + employeeID +  " retrieving order " + order.getOrderID());
 
 
             }
@@ -112,17 +112,17 @@ public class Employee {
         }
     }
 
-    public void completeOrder(int order_id) {
+    public void completeOrder(Order order) {
         //Order is completed and ingredients are removed from the database
         //Create database connection
         File database_file = new File("Burger.sqlite");
         LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
         try (Connection c = db.connection()) {
             try (PreparedStatement stmt = c.prepareStatement("UPDATE Burger_Order SET order_completed = 1 WHERE order_id = ?;")) {
-                stmt.setInt(1, order_id);
+                stmt.setInt(1, order.getOrderID());
 
                 stmt.executeUpdate();
-                System.out.println("User #" + employeeID +  " completed order " + order_id);
+                System.out.println("User #" + employeeID +  " completed order " + order.getOrderID());
 
 
             }
@@ -135,8 +135,50 @@ public class Employee {
 
     public ArrayList<Order> getUserToDoList() {
         //Shows list of all orders
+        //Create database connection
+        File database_file = new File("Burger.sqlite");
+        LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+        try (Connection c = db.connection()) {
+            try (PreparedStatement stmt = c.prepareStatement("SELECT o.order_id, i.ingredient_name FROM Burger_Order as o, Employee as e, Ingredient as i, Burger_Component as bc WHERE e.employee_id = o.employee_id AND o.employee_id = ? AND o.order_completed = 0 AND bc.order_id = o.order_id AND bc.ingredient_id = i.ingredient_id;")) {
+                stmt.setInt(1, employeeID);
 
-
+                try (ResultSet r = stmt.executeQuery()) {
+                    ArrayList<Order> orders = new ArrayList<>();
+                    Order order = null;
+                    int order_id = -1;
+                    int order_num = 0;
+                    boolean has_orders = false;
+                    while (r.next()) {
+                        has_orders = true;
+                        //Process first order
+                        if (order_num == 0) {
+                            order = new Order(r.getInt("order_id"));
+//                            System.out.println("New order " + order.getOrderID());
+                            order.addIngredient(r.getString("ingredient_name"));
+                            order_num ++;
+                        // Process subsequent orders
+                        } else if (r.getInt("order_id") != order.getOrderID()) {
+                            orders.add(order);
+                            order = new Order(r.getInt("order_id"));
+//                            System.out.println("New order " + order.getOrderID());
+                            order.addIngredient(r.getString("ingredient_name"));
+                        //Process ingredients which form part of initialised order
+                        } else {
+//                            System.out.println("Continuing order " + order.getOrderID());
+                            order.addIngredient(r.getString("ingredient_name"));
+                        }
+                    }
+                    if(has_orders) {
+                        orders.add(order);
+                    }
+                    return orders;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
