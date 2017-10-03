@@ -16,7 +16,7 @@ public class Backend_BurgerCoApp {
 //        app.addUsersToDB();
 
         //Employee_id and password input from Java FX
-        int employee_id = 1;
+        int employee_id = 2;
         String password_input = "test";
 
         Employee employee = null;
@@ -38,13 +38,19 @@ public class Backend_BurgerCoApp {
         }
 
         //Once logged in - display unfilled orders
-        //TO DO
+        ArrayList<Order> unfilled_orders = Order.getAllOpenOrders();
+        for (int i = 0; i < unfilled_orders.size(); i++) {
+            System.out.println("Unfilled -> Order id: " + unfilled_orders.get(i).getOrderID() + " " + unfilled_orders.get(i).getTimestamp());
+        }
 
         //And display the users orders
         ArrayList<Order> employee_orders = employee.getUserToDoList();
         if (employee_orders.size() == 0) {
             System.out.println("No orders assigned to this staff member");
+        } else {
+            System.out.println("Orders for: " + employee.getEmpFirstName() + " " + employee.getEmpLastName());
         }
+        //Test output for Java FX
         for (int i = 0; i < employee_orders.size(); i++) {
             System.out.print("Order #" + employee_orders.get(i).getOrderID() + ": ");
             for (int j = 0; j < employee_orders.get(i).getIngredients().size(); j++) {
@@ -55,12 +61,15 @@ public class Backend_BurgerCoApp {
                 }
             }
         }
+        //Display employee screen
 
         //Employee can select unfilled orders to be responsible for (pushes retrieve button in Java FX)
 //        employee.assignOrder(4);
+        //Refresh employee screen
 
         //Employee can complete retrieved orders (pushes completed button in Java FX)
-//        employee.completeOrder(4);
+//        employee.completeOrder(2);
+        //Refresh employee screen
     }
 
     public void addUsersToDB() {

@@ -29,7 +29,7 @@ INSERT INTO Ingredient(ingredient_type, ingredient_name, unit_price, quantity) V
   (4, "Tomato Sauce", 0.25, 5),
   (4, "Mayonaise", 0.25, 5),
   (4, "Mustard", 0.5, 5),
-  (4, "Mint", 0.5, 5);
+  (4, "Mint", 0.5, 3);
 
 
 -- -----------------------Orders-------------------
@@ -80,4 +80,4 @@ INSERT INTO Burger_Component(ingredient_id, order_id) VALUES
   (2, 5),
   (13, 5),
   (15, 5),
-  (19, 5);
+  (18, 5);

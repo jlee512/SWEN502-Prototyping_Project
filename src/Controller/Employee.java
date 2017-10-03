@@ -90,7 +90,7 @@ public class Employee {
         }
     }
 
-    public void assignOrder(Order order) {
+    public void assignOrder(int order_id) {
         //Assign an order to the employee
         //Create database connection
         File database_file = new File("Burger.sqlite");
@@ -98,10 +98,10 @@ public class Employee {
         try (Connection c = db.connection()) {
             try (PreparedStatement stmt = c.prepareStatement("UPDATE Burger_Order SET employee_id = ? WHERE order_id = ?;")) {
                 stmt.setInt(1, employeeID);
-                stmt.setInt(2, order.getOrderID());
+                stmt.setInt(2, order_id);
 
                 stmt.executeUpdate();
-                System.out.println("User #" + employeeID +  " retrieving order " + order.getOrderID());
+                System.out.println("User #" + employeeID +  " retrieving order " + order_id);
 
 
             }
@@ -112,17 +112,17 @@ public class Employee {
         }
     }
 
-    public void completeOrder(Order order) {
+    public void completeOrder(int order_id) {
         //Order is completed and ingredients are removed from the database
         //Create database connection
         File database_file = new File("Burger.sqlite");
         LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
         try (Connection c = db.connection()) {
             try (PreparedStatement stmt = c.prepareStatement("UPDATE Burger_Order SET order_completed = 1 WHERE order_id = ?;")) {
-                stmt.setInt(1, order.getOrderID());
+                stmt.setInt(1, order_id);
 
                 stmt.executeUpdate();
-                System.out.println("User #" + employeeID +  " completed order " + order.getOrderID());
+                System.out.println("User #" + employeeID +  " completed order " + order_id);
 
 
             }
