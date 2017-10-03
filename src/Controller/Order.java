@@ -55,7 +55,7 @@ public class Order {
 		return ingredients;
 	}
 
-	public void createOrder(){
+	public static void createOrder(){
 		//Create the order based on the input received from the GUI and add to DB
 	}
 	

@@ -70,6 +70,8 @@ public class Backend_BurgerCoApp {
         //Employee can complete retrieved orders (pushes completed button in Java FX)
 //        employee.completeOrder(5);
         //Refresh employee screen
+
+        //
     }
 
     public void addUsersToDB() {
