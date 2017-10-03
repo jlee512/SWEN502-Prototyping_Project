@@ -1,5 +1,9 @@
 package Controller;
 
+/**
+ * @author Julian Lees, Madeleine St-Laurent-Guerin
+ */
+
 import Database.LocalSQLiteDB;
 
 import java.io.File;
@@ -55,11 +59,9 @@ public class Order {
 		return ingredients;
 	}
 
+	//Creates a new order record in the database 
 	public static void createOrder(String custname, int custphone){
-		//Create the order based on the input received from the GUI and add to DB
-		//Will need to connect to the database
-		//Insert into order list and into burger component list
-
+		
 		File database_file = new File("Burger.sqlite");
 		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
 		try (Connection c = db.connection()) {
@@ -77,13 +79,12 @@ public class Order {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
+	//Create the new burger component records
 	public void createBurgerComponents(int orderID, ArrayList<String> inputingredients){
-		// Loop over the array list to get ingredients
-		// Get ingredient ID --> Call that method
-		// Add them to the database with the order ID
-		
+	
 		for (int i = 0; i < inputingredients.size() ; i++ ){
 			int ingid = Ingredient.getIngredientID(inputingredients.get(i));
 			
@@ -109,10 +110,8 @@ public class Order {
 		}
 	}
 	
+	//Connect to the database to obtain the order ID number 
 	public static int getOrderID(String custname){
-		//Connect to the database
-		//Get the order for that customer phone
-		//Return the order id
 		int orderid = -1;
 		
 		File database_file = new File("Burger.sqlite");
@@ -149,8 +148,9 @@ public class Order {
 		//Complete the order and remove ingredients from the database	
 	}
 
+	//Get all open orders which are not yet assigned a staff member	
 	public static ArrayList<Order> getAllOpenOrders(){
-		//Get all open orders which are not yet assigned a staff member
+		
 		//Create database connection
 		File database_file = new File("Burger.sqlite");
 		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
