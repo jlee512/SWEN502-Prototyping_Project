@@ -55,7 +55,7 @@ public class Order {
 		return ingredients;
 	}
 
-	public static void createOrder(ArrayList<String> inputingredients, String custname, int custphone){
+	public static void createOrder(String custname, int custphone){
 		//Create the order based on the input received from the GUI and add to DB
 		//Will need to connect to the database
 		//Insert into order list and into burger component list
@@ -71,10 +71,41 @@ public class Order {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
+		}
+	}
+	
+	public void createBurgerComponents(int orderID, ArrayList<String> inputingredients){
+		// Loop over the array list to get ingredients
+		// Get ingredient ID --> Call that method
+		// Add them to the database with the order ID
+		
+		for (int i = 0; i < inputingredients.size() ; i++ ){
+			int ingid = Ingredient.getIngredientID(inputingredients.get(i));
+			
+			File database_file = new File("Burger.sqlite");
+			LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+			try (Connection c = db.connection()) {
+				try (PreparedStatement stmt = c.prepareStatement("INSERT INTO Burger_Component (ingredient_id, order_id) VALUES (?, ?)")) {
+					
+					stmt.setInt(1, ingid);
+					stmt.setInt(2, orderID);
+					stmt.executeUpdate();
+					System.out.println("Order ID: " + orderID + "ingredientID: " + ingid + "inputted successfully");
+					
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			
+			} catch (SQLException e) {
+				e.printStackTrace();
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 	
