@@ -1,5 +1,11 @@
 package Controller;
 
+import Database.LocalSQLiteDB;
+
+import java.io.File;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Employee {
@@ -21,8 +27,25 @@ public class Employee {
 		this.iterations = iterations;
 	}
 
-	public void addEmployeetoDB() {
-		//Add user to the database
+	public void addEmployeetoDB(String firstname_entry, String lastname_entry, String password_entry) {
+		//Create database connection
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+
+		//Add user to Database
+		int iteration_temp = Passwords.getNextNumIterations();
+		byte[] salt = Passwords.getNextSalt();
+		byte[] hash = Passwords.hash(password_entry.toCharArray(), salt, iterations);
+
+		try(Connection c = db.connection()) {
+			try(PreparedStatement stmt = c.prepareStatement("INSERT INTO Employee (employee_fname, employee_lname, hash, salt, iterations) VALUES (?, ?, ?, ?, ?)")) {
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 
 	}
 
