@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -23,7 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class Display extends Application {
 
-	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7;
+	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -184,37 +185,68 @@ public class Display extends Application {
 
 		// Scene 6
 
-		Text confirm = new Text("Confirm your order:");
-		confirm.setFont(Font.font ("Helvetica", 25));
-		confirm.setFill(Color.web("#ee0000"));		
+		Text enterDetails = new Text("Enter your details:");
+		enterDetails.setFont(Font.font ("Helvetica", 25));
+		enterDetails.setFill(Color.web("#ee0000"));		
 
 		VBox layout6 = new VBox(75);
+		VBox detailVBox = new VBox(20);
+		HBox layout6User = new HBox(20);
+		HBox layout6Pass = new HBox(20);
 
-		Button confirmNext = new Button("Next");
-		confirmNext.setOnAction(e -> primaryStage.setScene(scene7));
+		Text userName = new Text("Name:");
+		TextField userNameIn = new TextField();
 
-		confirmNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		Text userPhone = new Text("Phone:");
+		TextField userPhoneIn = new TextField();
 
-		layout6.getChildren().addAll(confirm, confirmNext);
+		Button detailsNext = new Button("Next");
+		detailsNext.setOnAction(e -> primaryStage.setScene(scene7));
+
+		detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
+		layout6User.getChildren().addAll(userName, userNameIn);
+		layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
+		detailVBox.getChildren().addAll(layout6User, layout6Pass);
+		layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
+		layout6User.setAlignment(Pos.CENTER);
+		layout6Pass.setAlignment(Pos.CENTER);
 		layout6.setAlignment(Pos.CENTER);
 		scene6 = new Scene(layout6, 320, 480);
 
 		// Scene 7
 
+		Text confirm = new Text("Confirm your order:");
+		confirm.setFont(Font.font ("Helvetica", 25));
+		confirm.setFill(Color.web("#ee0000"));		
+
+		VBox layout7 = new VBox(75);
+
+		Button confirmNext = new Button("Next");
+		confirmNext.setOnAction(e -> primaryStage.setScene(scene8));
+
+		confirmNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
+		layout7.getChildren().addAll(confirm, confirmNext);
+		layout7.setAlignment(Pos.CENTER);
+		scene7 = new Scene(layout7, 320, 480);
+
+		// Scene 8
+
 		Text finalMessage = new Text("Your order has been processed");
 		finalMessage.setFont(Font.font ("Helvetica", 25));
 		finalMessage.setFill(Color.web("#ee0000"));		
 
-		VBox layout7 = new VBox(75);
+		VBox layout8 = new VBox(75);
 
 		Button buttonReturn = new Button("Return");
 		buttonReturn.setOnAction(e -> primaryStage.setScene(scene1));
 
 		buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout7.getChildren().addAll(finalMessage, buttonReturn);
-		layout7.setAlignment(Pos.CENTER);
-		scene7 = new Scene(layout7, 320, 480);
+		layout8.getChildren().addAll(finalMessage, buttonReturn);
+		layout8.setAlignment(Pos.CENTER);
+		scene8 = new Scene(layout8, 320, 480);
 	}
 
 	// Scene 8
