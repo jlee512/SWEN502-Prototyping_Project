@@ -64,11 +64,11 @@ public class Backend_BurgerCoApp {
         //Display employee screen
 
         //Employee can select unfilled orders to be responsible for (pushes retrieve button in Java FX)
-//        employee.assignOrder(4);
+//        employee.assignOrder(5);
         //Refresh employee screen
 
         //Employee can complete retrieved orders (pushes completed button in Java FX)
-//        employee.completeOrder(2);
+//        employee.completeOrder(5);
         //Refresh employee screen
     }
 
