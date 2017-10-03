@@ -71,7 +71,14 @@ public class Backend_BurgerCoApp {
 //        employee.completeOrder(5);
         //Refresh employee screen
 
-        //
+        //Test ingredient list to restock
+        ArrayList<String> restock_ingredients = Ingredient.getRestockIngredients();
+        for (int i = 0; i < restock_ingredients.size(); i++) {
+            System.out.println("Ingredient to restock: " + restock_ingredients.get(i));
+        }
+
+//        Test ingredient restock mechanism
+//        Ingredient.restock("Cucumber");
     }
 
     public void addUsersToDB() {

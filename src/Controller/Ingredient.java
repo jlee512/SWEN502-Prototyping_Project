@@ -24,9 +24,56 @@ public class Ingredient {
 	public static void reduceStock(){
 		//Remove the stock items from the database
 	}
+
+	public static int getStockLevel(String ingredientName) {
+		//Get a stock level from the database for a given ingredient
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.quantity FROM Ingredient as i WHERE ingredient_name = ?;")) {
+				stmt.setString(1, ingredientName);
+
+				try (ResultSet r = stmt.executeQuery()) {
+					while (r.next()) {
+						return r.getInt("quantity");
+					}
+				}
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
 	
-	public static void restock(){
+	public static void restock(String ingredientName){
 		//Increase the stock in the database
+		//Create database connection
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+
+		int stock_level = Ingredient.getStockLevel(ingredientName);
+
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("UPDATE Ingredient SET quantity = ? WHERE ingredient_name = ?;")) {
+				stmt.setInt(1, (stock_level + 5));
+				stmt.setString(2, ingredientName);
+
+				stmt.executeUpdate();
+				System.out.println(ingredientName + " stock level replenished");
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static ArrayList<String> getRestockIngredients(){

@@ -57,6 +57,7 @@ public class Order {
 
 	public static void createOrder(){
 		//Create the order based on the input received from the GUI and add to DB
+
 	}
 	
 	public static Order getOrder(){

@@ -21,4 +21,11 @@ UPDATE Burger_Order SET order_completed = 0 WHERE order_id = 1;
 -- Ingredient queries
 SELECT i.ingredient_name FROM Ingredient as i WHERE i.quantity < 5;
 
+-- Restock ingredient
+UPDATE Ingredient SET quantity = 3 WHERE ingredient_name = "Cucumber";
+
+-- Query stock level
+SELECT i.quantity FROM Ingredient as i WHERE ingredient_name = "Cucumber";
+
+
 
