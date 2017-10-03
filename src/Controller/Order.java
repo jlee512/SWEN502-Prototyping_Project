@@ -7,9 +7,17 @@ public class Order {
 	int orderID;
 	String userAlias;
 	int userPhone;
-	boolean orderComplete;
+	boolean orderComplete = false;
 	String timestamp;
 	ArrayList<Ingredient> ingredients;
+
+	public Order(int order_id, String alias, int userPhone, String timestamp, ArrayList<Ingredient> ingredients) {
+		this.orderID = order_id;
+		this.userAlias = alias;
+		this.userPhone = userPhone;
+		this.timestamp = timestamp;
+		this.ingredients = ingredients;
+	}
 	
 	public void createOrder(){
 		//Create the order based on the input received from the GUI
@@ -28,4 +36,7 @@ public class Order {
 		return null;
 	}
 
+	public ArrayList<Order> getAllOrdersByUser() {
+		return null;
+	}
 }

@@ -55,11 +55,11 @@ public class Employee {
         //Create database connection
         File database_file = new File("Burger.sqlite");
         LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
-        try(Connection c = db.connection()) {
-            try(PreparedStatement stmt = c.prepareStatement("SELECT e.employee_id, e.employee_fname, e.employee_lname, e.hash, e.salt, e.iterations FROM Employee as e WHERE employee_id = ?;")) {
+        try (Connection c = db.connection()) {
+            try (PreparedStatement stmt = c.prepareStatement("SELECT e.employee_id, e.employee_fname, e.employee_lname, e.hash, e.salt, e.iterations FROM Employee AS e WHERE employee_id = ?;")) {
                 stmt.setInt(1, employeeID);
 
-                try(ResultSet r = stmt.executeQuery()) {
+                try (ResultSet r = stmt.executeQuery()) {
                     if (r.next()) {
                         Employee employee = new Employee(r.getInt("employee_id"), r.getString("employee_fname"), r.getString("employee_lname"), r.getString("hash"), r.getString("salt"), r.getInt("iterations"));
                         return employee;
@@ -85,17 +85,52 @@ public class Employee {
 
         if (hash_string_check.equals(employee.getHash())) {
             return true;
+        } else {
+            throw new BadPasswordException("User credentials could not be verified");
         }
-
-        return false;
     }
 
-    public void assignOrder() {
+    public void assignOrder(int order_id) {
         //Assign an order to the employee
+        //Create database connection
+        File database_file = new File("Burger.sqlite");
+        LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+        try (Connection c = db.connection()) {
+            try (PreparedStatement stmt = c.prepareStatement("UPDATE Burger_Order SET employee_id = ? WHERE order_id = ?;")) {
+                stmt.setInt(1, employeeID);
+                stmt.setInt(2, order_id);
+
+                stmt.executeUpdate();
+                System.out.println("User #" + employeeID +  " retrieving order " + order_id);
+
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void completeOrder() {
+    public void completeOrder(int order_id) {
         //Order is completed and ingredients are removed from the database
+        //Create database connection
+        File database_file = new File("Burger.sqlite");
+        LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+        try (Connection c = db.connection()) {
+            try (PreparedStatement stmt = c.prepareStatement("UPDATE Burger_Order SET order_completed = 1 WHERE order_id = ?;")) {
+                stmt.setInt(1, order_id);
+
+                stmt.executeUpdate();
+                System.out.println("User #" + employeeID +  " completed order " + order_id);
+
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
     public ArrayList<Order> getUserToDoList() {

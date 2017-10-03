@@ -12,4 +12,6 @@ FROM Burger_Order as o WHERE o.order_completed = 0 AND o.employee_id is NULL ORD
 -- Check whether an employee exists based on an employee id
 SELECT e.employee_id, e.employee_fname, e.employee_lname, e.hash, e.salt, e.iterations FROM Employee as e WHERE employee_id = 1;
 
+UPDATE Burger_Order SET employee_id = 1 WHERE order_id = 4;
+
 

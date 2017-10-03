@@ -13,7 +13,34 @@ public class Backend_BurgerCoApp {
     public static void main(String[] args) {
         Backend_BurgerCoApp app = new Backend_BurgerCoApp();
 //        app.addUsersToDB();
-//        app.verifyUserCredentials();
+
+        //Employee_id and password input from Java FX
+        int employee_id = 4;
+        String password_input = "test";
+
+        Employee employee = null;
+
+        //Attempt to verify credentials and if verified take to employee screen
+        try {
+            app.verifyUserCredentials(employee_id, password_input);
+            employee = Employee.getUserDB(employee_id);
+            System.out.println(employee.getEmpFirstName() + " " + employee.getEmpLastName() + " logged in");
+        } catch (BadPasswordException e) {
+            //Java FX post error message "User credentials incorrect"
+            System.out.println("User credentials could not be verified");
+        } catch (NonExistentUserException e) {
+            //Java FX post error message "User_id does not exist"
+            System.out.println("User does not exist");
+        }
+
+        //Once logged in - display unfilled orders
+        //TO DO
+
+        //Employee can select unfilled orders to be responsible for (pushes retrieve button in Java FX)
+        employee.assignOrder(4);
+
+        //Employee can complete retrieved orders (pushes completed button in Java FX)
+        employee.completeOrder(4);
     }
 
     public void addUsersToDB() {
@@ -31,17 +58,13 @@ public class Backend_BurgerCoApp {
         Employee.addEmployeetoDB("Darren", "Carrol", "test");
     }
 
-    public void verifyUserCredentials(){
+    public void verifyUserCredentials(int employee_id, String password_input) throws NonExistentUserException, BadPasswordException {
         try {
-            if (Employee.validateUser(1, "test")) {
-                System.out.println("Employee credentials verified");
+            if (Employee.validateUser(employee_id, password_input)) {
+                System.out.println("Employee #" + employee_id + " credentials verified");
             } else {
                 System.out.println("Employee credentials could not be verified");
             }
-        } catch (NonExistentUserException e) {
-            e.printStackTrace();
-        } catch (BadPasswordException e) {
-            e.printStackTrace();
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
