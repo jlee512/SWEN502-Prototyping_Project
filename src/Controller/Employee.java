@@ -39,7 +39,8 @@ public class Employee {
 
 		try(Connection c = db.connection()) {
 			try(PreparedStatement stmt = c.prepareStatement("INSERT INTO Employee (employee_fname, employee_lname, hash, salt, iterations) VALUES (?, ?, ?, ?, ?)")) {
-				
+				stmt.setString(1, firstname_entry);
+				stmt.setString(2, lastname_entry);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
