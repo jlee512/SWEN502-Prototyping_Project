@@ -2,12 +2,12 @@ package Controller;
 
 import Database.LocalSQLiteDB;
 
-import javax.sql.rowset.serial.SerialBlob;
 import javax.sql.rowset.serial.SerialException;
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -16,11 +16,11 @@ public class Employee {
     int employeeID;
     String empFirstName;
     String empLastName;
-    byte[] hash;
-    byte[] salt;
+    String hash;
+    String salt = "burgerco";
     int iterations;
 
-    public Employee(int employeeID, String employeeFName, String emloyeeLName, byte[] hash, byte[] salt, int iterations) {
+    public Employee(int employeeID, String employeeFName, String emloyeeLName, String hash, String salt, int iterations) {
         //Employee Constructor
         this.employeeID = employeeID;
         this.empFirstName = employeeFName;
@@ -30,6 +30,82 @@ public class Employee {
         this.iterations = iterations;
     }
 
+    public String getEmpFirstName() {
+        return empFirstName;
+    }
+
+    public String getEmpLastName() {
+        return empLastName;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public String getSalt() {
+        return salt;
+    }
+
+    public int getIterations() {
+        return iterations;
+    }
+
+    public static Employee getUserDB(int employeeID) throws NonExistentUserException {
+        //Get user from the database
+        //Create database connection
+        File database_file = new File("Burger.sqlite");
+        LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+        try(Connection c = db.connection()) {
+            try(PreparedStatement stmt = c.prepareStatement("SELECT e.employee_id, e.employee_fname, e.employee_lname, e.hash, e.salt, e.iterations FROM Employee as e WHERE employee_id = ?;")) {
+                stmt.setInt(1, employeeID);
+
+                try(ResultSet r = stmt.executeQuery()) {
+                    if (r.next()) {
+                        Employee employee = new Employee(r.getInt("employee_id"), r.getString("employee_fname"), r.getString("employee_lname"), r.getString("hash"), r.getString("salt"), r.getInt("iterations"));
+                        return employee;
+                    } else {
+                        throw new NonExistentUserException("User is not within database");
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static boolean validateUser(int employee_id_input, String password_input) throws NonExistentUserException, BadPasswordException, UnsupportedEncodingException {
+        //Validate the user's credentials
+        Employee employee = Employee.getUserDB(employee_id_input);
+
+        byte[] hash_array_check = Passwords.hash(password_input.toCharArray(), employee.getIterations());
+        String hash_string_check = new String(hash_array_check, "UTF-8");
+
+        if (hash_string_check.equals(employee.getHash())) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void assignOrder() {
+        //Assign an order to the employee
+    }
+
+    public void completeOrder() {
+        //Order is completed and ingredients are removed from the database
+    }
+
+    public ArrayList<Order> getUserToDoList() {
+        //Shows list of all orders
+
+
+        return null;
+    }
+
+    //Method created to populate prototype database with test data for employees (necessary in Java in order to encrypt credentials)
     public static void addEmployeetoDB(String firstname_entry, String lastname_entry, String password_entry) {
         //Create database connection
         File database_file = new File("Burger.sqlite");
@@ -37,12 +113,11 @@ public class Employee {
 
         //Add user to Database
         int iteration_temp = Passwords.getNextNumIterations();
-        byte[] salt_array = Passwords.getNextSalt();
-        byte[] hash_array = Passwords.hash(password_entry.toCharArray(), salt_array, iteration_temp);
+        byte[] hash_array = Passwords.hash(password_entry.toCharArray(), iteration_temp);
         String salt = null;
         String hash = null;
         try {
-            salt = new String(salt_array, "UTF-8");
+            salt = "burgerco";
             hash = new String(hash_array, "UTF-8");
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -71,28 +146,4 @@ public class Employee {
         }
 
     }
-
-    public static Employee getUserDB(int employeeID) {
-        //Get user from the database
-
-        return null;
-    }
-
-    public void validateUser() {
-        //Validate the password
-    }
-
-    public void assignOrder() {
-        //Assign an order to the employee
-    }
-
-    public void completeOrder() {
-        //Order is completed and ingredients are removed from the database
-    }
-
-    ArrayList<Order> getUserToDoList() {
-        //Shows list of all orders
-        return null;
-    }
-
 }
