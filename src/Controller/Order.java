@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Order {
-	
+
 	int orderID;
 	String userAlias;
 	int userPhone;
@@ -55,20 +55,69 @@ public class Order {
 		return ingredients;
 	}
 
-	public static void createOrder(){
+	public static void createOrder(ArrayList<String> inputingredients, String custname, int custphone){
 		//Create the order based on the input received from the GUI and add to DB
+		//Will need to connect to the database
+		//Insert into order list and into burger component list
 
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("INSERT INTO Burger_Order (user_alias, user_phone) VALUES (?, ?)")) {
+				stmt.setString(1, custname);
+				stmt.setInt(2, custphone);
+				stmt.executeUpdate();
+				System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 	
+	public static int getOrderID(String custname){
+		//Connect to the database
+		//Get the order for that customer phone
+		//Return the order id
+		int orderid = -1;
+		
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT order_id FROM Burger_Order WHERE user_alias=(?,?)")) {
+				stmt.setString(1, custname);
+				try(ResultSet r = stmt.executeQuery()){
+					while (r.next()){
+						return r.getInt("order_id");
+					}
+				}
+				System.out.println("Order id");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return orderid;
+	}
+
+
+	//
 	public static Order getOrder(){
 		//get Order
 		return null;
 	}
-	
+
 	public void completeOrder(){
 		//Complete the order and remove ingredients from the database	
 	}
-	
+
 	public static ArrayList<Order> getAllOpenOrders(){
 		//Get all open orders which are not yet assigned a staff member
 		//Create database connection
@@ -88,14 +137,14 @@ public class Order {
 						//Process first order
 						if (order_num == 0) {
 							order = new Order(r.getInt("order_id"));
-//                            System.out.println("New order " + order.getOrderID());
+							//                            System.out.println("New order " + order.getOrderID());
 							order.setTimestamp(r.getString("timestamp"));
 							order_num ++;
 							// Process subsequent orders
 						} else if (r.getInt("order_id") != order.getOrderID()) {
 							orders.add(order);
 							order = new Order(r.getInt("order_id"));
-//                            System.out.println("New order " + order.getOrderID());
+							//                            System.out.println("New order " + order.getOrderID());
 							order.setTimestamp(r.getString("timestamp"));
 							//Process ingredients which form part of initialised order
 						}
