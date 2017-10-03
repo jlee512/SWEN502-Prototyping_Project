@@ -24,7 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class Display extends Application {
 
-	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8;
+	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -38,10 +38,10 @@ public class Display extends Application {
 
 		Button orderButton = new Button("Place an order");
 		orderButton.setOnAction(e -> primaryStage.setScene(scene2));
-		Button serverButton = new Button("Server login");
-		//		orderButton.setOnAction(e -> primaryStage.setScene(scene2));
-		VBox layout1 = new VBox(75);
-		VBox layout1Inner = new VBox(20);
+		Button serverButton = new Button("Staff login");
+		serverButton.setOnAction(e -> primaryStage.setScene(server1));
+		VBox layout1 = new VBox(25);
+		VBox layout1Inner = new VBox(200);
 		orderButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 		serverButton.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 		layout1.setStyle("-fx-background-color: #eeeeee");
@@ -234,7 +234,7 @@ public class Display extends Application {
 		// Scene 8
 
 		Text finalMessage = new Text("Your order has been processed");
-		finalMessage.setFont(Font.font ("Helvetica", 25));
+		finalMessage.setFont(Font.font ("Helvetica", 20));
 		finalMessage.setFill(Color.web("#ee0000"));		
 
 		VBox layout8 = new VBox(75);
@@ -247,24 +247,34 @@ public class Display extends Application {
 		layout8.getChildren().addAll(finalMessage, buttonReturn);
 		layout8.setAlignment(Pos.CENTER);
 		scene8 = new Scene(layout8, 320, 480);
+
+		// Server scene 1
+
+		VBox serverlayout1 = new VBox(75);
+		VBox serverVBox = new VBox(20);
+		HBox server1ID = new HBox(20);
+		HBox server1Pass = new HBox(20);
+
+		Text serverID = new Text("UserID:");
+		TextField serverIDIn = new TextField();
+
+		Text staffPass = new Text("Password:");
+		TextField staffPassIn = new TextField();
+
+		Button loginButton = new Button("Login");
+		loginButton.setOnAction(e -> primaryStage.setScene(scene1));
+
+		loginButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
+		server1ID.getChildren().addAll(serverID, serverIDIn);
+		server1Pass.getChildren().addAll(staffPass, staffPassIn);
+		serverVBox.getChildren().addAll(server1ID, server1Pass);
+		serverlayout1.getChildren().addAll(serverVBox, loginButton);
+		server1ID.setAlignment(Pos.CENTER);
+		server1Pass.setAlignment(Pos.CENTER);
+		serverlayout1.setAlignment(Pos.CENTER);
+		server1 = new Scene(serverlayout1, 320, 480);
 	}
-
-	// Scene 8
-
-	//		Text loginMessage = new Text("Server login");
-	//		finalMessage.setFont(Font.font ("Helvetica", 25));
-	//		finalMessage.setFill(Color.web("#ee0000"));		
-	//
-	//		VBox layout8 = new VBox(75);
-	//
-	//		Button Login = new Button("Return");
-	//		buttonReturn.setOnAction(e -> primaryStage.setScene(scene1));
-	//
-	//		buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-	//
-	//		layout7.getChildren().addAll(finalMessage, buttonReturn);
-	//		layout7.setAlignment(Pos.CENTER);
-	//		scene7 = new Scene(layout7, 320, 480);
 
 	private Object ButtonClicked(ActionEvent e) {
 		// TODO Auto-generated method stub
