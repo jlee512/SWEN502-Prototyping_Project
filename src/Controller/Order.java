@@ -87,7 +87,7 @@ public class Order {
 		File database_file = new File("Burger.sqlite");
 		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
 		try (Connection c = db.connection()) {
-			try (PreparedStatement stmt = c.prepareStatement("SELECT order_id FROM Burger_Order WHERE user_alias=(?,?)")) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT order_id FROM Burger_Order WHERE user_alias = ?")) {
 				stmt.setString(1, custname);
 				try(ResultSet r = stmt.executeQuery()){
 					while (r.next()){

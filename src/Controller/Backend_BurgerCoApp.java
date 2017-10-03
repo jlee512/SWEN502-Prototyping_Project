@@ -79,6 +79,9 @@ public class Backend_BurgerCoApp {
 
 //        Test ingredient restock mechanism
 //        Ingredient.restock("Cucumber");
+
+        //Test getOrderId
+        System.out.println("Order_id for: " + "Test1 is -> " + Order.getOrderID("Test1"));
     }
 
     public void addUsersToDB() {
