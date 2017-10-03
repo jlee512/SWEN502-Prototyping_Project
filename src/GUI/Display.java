@@ -117,6 +117,7 @@ public class Display extends Application {
 					System.out.println("Lettuce is selected");
 				}
 				if (salad2.isSelected())
+					//test
 				{
 					System.out.println("Tomatoes is selected");
 				}
