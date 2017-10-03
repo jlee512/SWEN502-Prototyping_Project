@@ -12,22 +12,23 @@ public class Employee {
 	int iterations;
 	
 	public void getUserDB(){
-		
+		//Get user from the database
 	}
 	
 	public void validateUser(){
-		
+		//Validate the password 
 	}
 	
 	public void assignOrder(){
-		
+		//Assign an order to the employee
 	}
 	
 	public void completeOrder(){
-		
+		//Order is completed and ingredients are removed from the database
 	}
 	
 	ArrayList<Order> getUserToDoList(){
+		//Shows list of all orders
 		return null;
 	}
 
