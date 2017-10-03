@@ -41,7 +41,7 @@ CREATE TABLE Employee (
   employee_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   employee_fname VARCHAR(50),
   employee_lname VARCHAR(50),
-  hash BLOB NOT NULL,
-  salt BLOB NOT NULL,
+  hash TEXT NOT NULL,
+  salt TEXT NOT NULL,
   iterations INT NOT NULL
 );
