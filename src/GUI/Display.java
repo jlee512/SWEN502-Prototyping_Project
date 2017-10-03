@@ -24,7 +24,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class Display extends Application {
 
-	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1;
+	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -262,7 +262,7 @@ public class Display extends Application {
 		TextField staffPassIn = new TextField();
 
 		Button loginButton = new Button("Login");
-		loginButton.setOnAction(e -> primaryStage.setScene(scene1));
+		loginButton.setOnAction(e -> primaryStage.setScene(server2));
 
 		loginButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
@@ -274,6 +274,30 @@ public class Display extends Application {
 		server1Pass.setAlignment(Pos.CENTER);
 		serverlayout1.setAlignment(Pos.CENTER);
 		server1 = new Scene(serverlayout1, 320, 480);
+		
+		// Server scene 2
+		
+		VBox serverlayout2 = new VBox(75);
+		Text orderHeader = new Text("Orders:");
+		orderHeader.setFont(Font.font ("Helvetica", 25));
+		orderHeader.setFill(Color.web("#ee0000"));		
+		HBox orderBox = new HBox(20);
+		
+		Text orderText = new Text("Order text");
+		Button completeOrder = new Button("Complete");
+		completeOrder.setOnAction(e -> primaryStage.setScene(server2));
+		completeOrder.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		Button Restock = new Button("Restock");
+		Restock.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		Button Complete = new Button("Complete");
+		Complete.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		
+		orderBox.getChildren().addAll(orderText, completeOrder);
+		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, Complete);
+		orderBox.setAlignment(Pos.CENTER);
+		serverlayout2.setAlignment(Pos.CENTER);
+		server2 = new Scene(serverlayout2, 320, 480);
+
 	}
 
 	private Object ButtonClicked(ActionEvent e) {
