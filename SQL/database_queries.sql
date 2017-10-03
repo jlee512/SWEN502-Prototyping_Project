@@ -18,4 +18,7 @@ UPDATE Burger_Order SET employee_id = 1 WHERE order_id = 4;
 -- Update an order to be completed
 UPDATE Burger_Order SET order_completed = 0 WHERE order_id = 1;
 
+-- Ingredient queries
+SELECT i.ingredient_name FROM Ingredient as i WHERE i.quantity < 5;
+
 

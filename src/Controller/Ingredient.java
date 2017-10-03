@@ -22,7 +22,7 @@ public class Ingredient {
 		//Increase the stock in the database
 	}
 	
-	public static Ingredient getIngredients(){
+	public static Ingredient getRestockIngredients(){
 		
 		return null;
 	}
