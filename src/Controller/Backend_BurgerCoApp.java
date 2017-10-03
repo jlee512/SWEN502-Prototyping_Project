@@ -70,6 +70,18 @@ public class Backend_BurgerCoApp {
         //Employee can complete retrieved orders (pushes completed button in Java FX)
 //        employee.completeOrder(5);
         //Refresh employee screen
+
+        //Test ingredient list to restock
+        ArrayList<String> restock_ingredients = Ingredient.getRestockIngredients();
+        for (int i = 0; i < restock_ingredients.size(); i++) {
+            System.out.println("Ingredient to restock: " + restock_ingredients.get(i));
+        }
+
+//        Test ingredient restock mechanism
+//        Ingredient.restock("Cucumber");
+
+        //Test getOrderId
+        System.out.println("Order_id for: " + "Test1 is -> " + Order.getOrderID("Test1"));
     }
 
     public void addUsersToDB() {

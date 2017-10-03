@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1c3a82-ea91-4f64-b86b-3131f8228d6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/decb5e32-219e-4dac-a6c2-5c0eef5e961b/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/decb5e32-219e-4dac-a6c2-5c0eef5e961b/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/decb5e32-219e-4dac-a6c2-5c0eef5e961b/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/decb5e32-219e-4dac-a6c2-5c0eef5e961b/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Burger.sqlite" afterPath="$PROJECT_DIR$/Burger.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Ingredient.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Ingredient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" afterPath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Order.java" afterPath="$PROJECT_DIR$/src/Controller/Order.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,19 +125,10 @@
       <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Employee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3465">
-              <caret line="124" column="90" lean-forward="false" selection-start-line="124" selection-start-column="90" selection-end-line="124" selection-end-column="90" />
+            <state relative-caret-position="858">
+              <caret line="210" column="37" lean-forward="true" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="37" />
               <folding>
-                <element signature="e#887#888#0" expanded="false" />
-                <element signature="e#922#923#0" expanded="false" />
-                <element signature="e#960#961#0" expanded="false" />
-                <element signature="e#994#995#0" expanded="false" />
-                <element signature="e#1025#1026#0" expanded="false" />
-                <element signature="e#1052#1053#0" expanded="false" />
-                <element signature="e#1083#1084#0" expanded="false" />
-                <element signature="e#1110#1111#0" expanded="false" />
-                <element signature="e#1144#1145#0" expanded="false" />
-                <element signature="e#1177#1178#0" expanded="false" />
+                <element signature="imports" expanded="true" />
                 <marker date="1507024052513" expanded="true" signature="1595:1722" ph="SELECT e.emp... Employee" />
                 <marker date="1507024052513" expanded="true" signature="3522:3580" ph="UPDATE Burge... " />
                 <marker date="1507024052513" expanded="true" signature="4397:4459" ph="UPDATE Burge... " />
@@ -155,10 +142,30 @@
       <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1551">
-              <caret line="70" column="18" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+            <state relative-caret-position="383">
+              <caret line="89" column="115" lean-forward="false" selection-start-line="89" selection-start-column="115" selection-end-line="89" selection-end-column="115" />
               <folding>
-                <marker date="1507023786753" expanded="true" signature="1652:1784" ph="SELECT o.ord... Burger_Order" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#504#505#0" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
+                <element signature="e#558#559#0" expanded="true" />
+                <element signature="e#581#582#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+                <element signature="e#634#635#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
+                <element signature="e#698#699#0" expanded="true" />
+                <element signature="e#731#732#0" expanded="true" />
+                <element signature="e#754#755#0" expanded="true" />
+                <element signature="e#801#802#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#925#926#0" expanded="true" />
+                <element signature="e#971#972#0" expanded="true" />
+                <element signature="e#996#997#0" expanded="true" />
+                <marker date="1507071712887" expanded="true" signature="1503:1566" ph="INSERT INTO Burger_Order... " />
+                <marker date="1507071712887" expanded="true" signature="2331:2383" ph="SELECT order... Burger_Order" />
+                <marker date="1507071712887" expanded="true" signature="2331:2385" ph="SELECT order... Burger_Order" />
+                <marker date="1507071712887" expanded="true" signature="3326:3458" ph="SELECT o.ord... Burger_Order" />
               </folding>
             </state>
           </provider>
@@ -167,39 +174,18 @@
       <file leaf-file-name="Ingredient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.Employee" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Employee">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.Burger_Order" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Burger_Order">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+            <state relative-caret-position="93">
+              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1507071222952" expanded="true" signature="814:874" ph="SELECT i.qua... Ingredient" />
+                <marker date="1507071222952" expanded="true" signature="814:878" ph="SELECT i.qua... Ingredient" />
+                <marker date="1507071222952" expanded="true" signature="1655:1713" ph="UPDATE Ingre... " />
+                <marker date="1507071222952" expanded="true" signature="1655:1714" ph="UPDATE Ingre... " />
+                <marker date="1507071222952" expanded="true" signature="1655:1715" ph="UPDATE Ingre... " />
+                <marker date="1507071222952" expanded="true" signature="1655:1716" ph="UPDATE Ingre... " />
+                <marker date="1507071222952" expanded="true" signature="2398:2464" ph="SELECT i.ing... Ingredient" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,8 +193,8 @@
       <file leaf-file-name="Backend_BurgerCoApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+            <state relative-caret-position="825">
+              <caret line="83" column="59" lean-forward="false" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,8 +205,8 @@
       <file leaf-file-name="database_queries.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SQL/database_queries.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="693">
-              <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
+            <state relative-caret-position="990">
+              <caret line="27" column="60" lean-forward="true" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -257,10 +243,10 @@
         <option value="$PROJECT_DIR$/src/Controller/BadPasswordException.java" />
         <option value="$PROJECT_DIR$/src/Controller/Passwords.java" />
         <option value="$PROJECT_DIR$/SQL/database_initialdata" />
-        <option value="$PROJECT_DIR$/src/Controller/Order.java" />
         <option value="$PROJECT_DIR$/src/Controller/Employee.java" />
         <option value="$PROJECT_DIR$/SQL/database_queries.sql" />
         <option value="$PROJECT_DIR$/src/Controller/Ingredient.java" />
+        <option value="$PROJECT_DIR$/src/Controller/Order.java" />
         <option value="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" />
       </list>
     </option>
@@ -322,8 +308,22 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Testing" />
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUI" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -853,12 +853,12 @@
       <updated>1506981180889</updated>
       <workItem from="1506981185579" duration="11857000" />
       <workItem from="1507006504808" duration="13680000" />
-      <workItem from="1507064006707" duration="539000" />
+      <workItem from="1507064006707" duration="5889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26076000" />
+    <option name="totallyTimeSpent" value="31426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -878,6 +878,7 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3285968" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12431318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2967033" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -892,7 +893,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3285968" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -918,16 +918,7 @@
         <state relative-caret-position="3465">
           <caret line="124" column="90" lean-forward="false" selection-start-line="124" selection-start-column="90" selection-end-line="124" selection-end-column="90" />
           <folding>
-            <element signature="e#887#888#0" expanded="false" />
-            <element signature="e#922#923#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-            <element signature="e#1052#1053#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-            <element signature="e#1110#1111#0" expanded="false" />
-            <element signature="e#1144#1145#0" expanded="false" />
-            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <marker date="1507024052513" expanded="true" signature="1595:1722" ph="SELECT e.emp... Employee" />
             <marker date="1507024052513" expanded="true" signature="3522:3580" ph="UPDATE Burge... " />
             <marker date="1507024052513" expanded="true" signature="4397:4459" ph="UPDATE Burge... " />
@@ -942,7 +933,27 @@
         <state relative-caret-position="1551">
           <caret line="70" column="18" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
           <folding>
-            <marker date="1507023786753" expanded="true" signature="1652:1784" ph="SELECT o.ord... Burger_Order" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+            <marker date="1507071712887" expanded="true" signature="1503:1566" ph="INSERT INTO Burger_Order... " />
+            <marker date="1507071712887" expanded="true" signature="2331:2383" ph="SELECT order... Burger_Order" />
+            <marker date="1507071712887" expanded="true" signature="2331:2385" ph="SELECT order... Burger_Order" />
+            <marker date="1507071712887" expanded="true" signature="3326:3458" ph="SELECT o.ord... Burger_Order" />
           </folding>
         </state>
       </provider>
@@ -969,7 +980,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1507071222952" expanded="true" signature="814:874" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507071222952" expanded="true" signature="814:878" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507071222952" expanded="true" signature="1655:1713" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="1655:1714" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="1655:1715" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="1655:1716" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="2398:2464" ph="SELECT i.ing... Ingredient" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -978,16 +998,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#887#888#0" expanded="false" />
-            <element signature="e#922#923#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-            <element signature="e#1052#1053#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-            <element signature="e#1110#1111#0" expanded="false" />
-            <element signature="e#1144#1145#0" expanded="false" />
-            <element signature="e#1177#1178#0" expanded="false" />
+            <element signature="imports" expanded="true" />
             <marker date="1507024052513" expanded="true" signature="1595:1722" ph="SELECT e.emp... Employee" />
             <marker date="1507024052513" expanded="true" signature="3522:3580" ph="UPDATE Burge... " />
             <marker date="1507024052513" expanded="true" signature="4397:4459" ph="UPDATE Burge... " />
@@ -1001,6 +1012,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3366">
           <caret line="102" column="20" lean-forward="true" selection-start-line="102" selection-start-column="20" selection-end-line="102" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,8 +1092,8 @@
         <state relative-caret-position="429">
           <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
-            <element signature="e#284#285#0" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="false" />
+            <element signature="e#325#326#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1095,6 +1109,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="e#290#291#0" expanded="false" />
+            <element signature="e#320#321#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1102,6 +1120,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="12" column="23" lean-forward="true" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
+          <folding>
+            <element signature="e#278#279#0" expanded="false" />
+            <element signature="e#308#309#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1109,6 +1131,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="865">
           <caret line="45" column="25" lean-forward="false" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1116,18 +1139,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
           <caret line="15" column="46" lean-forward="false" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Ingredient">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1135,55 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
           <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SQL/database_queries.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="21" column="54" lean-forward="false" selection-start-line="21" selection-start-column="54" selection-end-line="21" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3465">
-          <caret line="124" column="90" lean-forward="false" selection-start-line="124" selection-start-column="90" selection-end-line="124" selection-end-column="90" />
-          <folding>
-            <element signature="e#887#888#0" expanded="false" />
-            <element signature="e#922#923#0" expanded="false" />
-            <element signature="e#960#961#0" expanded="false" />
-            <element signature="e#994#995#0" expanded="false" />
-            <element signature="e#1025#1026#0" expanded="false" />
-            <element signature="e#1052#1053#0" expanded="false" />
-            <element signature="e#1083#1084#0" expanded="false" />
-            <element signature="e#1110#1111#0" expanded="false" />
-            <element signature="e#1144#1145#0" expanded="false" />
-            <element signature="e#1177#1178#0" expanded="false" />
-            <marker date="1507024052513" expanded="true" signature="1595:1722" ph="SELECT e.emp... Employee" />
-            <marker date="1507024052513" expanded="true" signature="3522:3580" ph="UPDATE Burge... " />
-            <marker date="1507024052513" expanded="true" signature="4397:4459" ph="UPDATE Burge... " />
-            <marker date="1507024052513" expanded="true" signature="5193:5460" ph="SELECT o.ord... Burger_Order" />
-            <marker date="1507024052513" expanded="true" signature="8326:8426" ph="INSERT INTO Employee... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1551">
-          <caret line="70" column="18" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-          <folding>
-            <marker date="1507023786753" expanded="true" signature="1652:1784" ph="SELECT o.ord... Burger_Order" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1201,6 +1166,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5907">
+          <caret line="195" column="135" lean-forward="true" selection-start-line="195" selection-start-column="135" selection-end-line="195" selection-end-column="135" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SQL/database_queries.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="27" column="60" lean-forward="true" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="210" column="37" lean-forward="true" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1507024052513" expanded="true" signature="1595:1722" ph="SELECT e.emp... Employee" />
+            <marker date="1507024052513" expanded="true" signature="3522:3580" ph="UPDATE Burge... " />
+            <marker date="1507024052513" expanded="true" signature="4397:4459" ph="UPDATE Burge... " />
+            <marker date="1507024052513" expanded="true" signature="5193:5460" ph="SELECT o.ord... Burger_Order" />
+            <marker date="1507024052513" expanded="true" signature="8326:8426" ph="INSERT INTO Employee... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Ingredient">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1507071222952" expanded="true" signature="814:874" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507071222952" expanded="true" signature="814:878" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507071222952" expanded="true" signature="1655:1713" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="1655:1714" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="1655:1715" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="1655:1716" ph="UPDATE Ingre... " />
+            <marker date="1507071222952" expanded="true" signature="2398:2464" ph="SELECT i.ing... Ingredient" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Burger_Order">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1214,10 +1240,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="89" column="115" lean-forward="false" selection-start-line="89" selection-start-column="115" selection-end-line="89" selection-end-column="115" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#504#505#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#558#559#0" expanded="true" />
+            <element signature="e#581#582#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+            <element signature="e#634#635#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#698#699#0" expanded="true" />
+            <element signature="e#731#732#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#801#802#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#971#972#0" expanded="true" />
+            <element signature="e#996#997#0" expanded="true" />
+            <marker date="1507071712887" expanded="true" signature="1503:1566" ph="INSERT INTO Burger_Order... " />
+            <marker date="1507071712887" expanded="true" signature="2331:2383" ph="SELECT order... Burger_Order" />
+            <marker date="1507071712887" expanded="true" signature="2331:2385" ph="SELECT order... Burger_Order" />
+            <marker date="1507071712887" expanded="true" signature="3326:3458" ph="SELECT o.ord... Burger_Order" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="71" column="33" lean-forward="true" selection-start-line="71" selection-start-column="33" selection-end-line="71" selection-end-column="33" />
+        <state relative-caret-position="825">
+          <caret line="83" column="59" lean-forward="false" selection-start-line="83" selection-start-column="59" selection-end-line="83" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
