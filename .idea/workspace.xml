@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1c3a82-ea91-4f64-b86b-3131f8228d6e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/BadPasswordException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controller/NonExistentUserException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Burger.sqlite" afterPath="$PROJECT_DIR$/Burger.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Employee.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Employee.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Passwords.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Passwords.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/database_initialdata" afterPath="$PROJECT_DIR$/SQL/database_initialdata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/database_queries.sql" afterPath="$PROJECT_DIR$/SQL/database_queries.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" afterPath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Employee.java" afterPath="$PROJECT_DIR$/src/Controller/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Passwords.java" afterPath="$PROJECT_DIR$/src/Controller/Passwords.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -158,8 +147,8 @@
       <file leaf-file-name="Backend_BurgerCoApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+            <state relative-caret-position="423">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -801,12 +790,12 @@
       <option name="presentableId" value="Default" />
       <updated>1506981180889</updated>
       <workItem from="1506981185579" duration="11857000" />
-      <workItem from="1507006504808" duration="7327000" />
+      <workItem from="1507006504808" duration="7533000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19184000" />
+    <option name="totallyTimeSpent" value="19390000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -1102,8 +1091,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        <state relative-caret-position="423">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -13,7 +13,7 @@ public class Backend_BurgerCoApp {
     public static void main(String[] args) {
         Backend_BurgerCoApp app = new Backend_BurgerCoApp();
 //        app.addUsersToDB();
-        app.verifyUserCredentials();
+//        app.verifyUserCredentials();
     }
 
     public void addUsersToDB() {
@@ -45,6 +45,39 @@ public class Backend_BurgerCoApp {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+        //Successful test
+//        System.out.println("Non-existent user test: ");
+//        try {
+//            if (Employee.validateUser(10, "test")) {
+//                System.out.println("Employee credentials verified");
+//            } else {
+//                System.out.println("Employee credentials could not be verified");
+//            }
+//        } catch (NonExistentUserException e) {
+//            e.printStackTrace();
+//        } catch (BadPasswordException e) {
+//            e.printStackTrace();
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+
+        //Successful test
+//        System.out.println("Incorrect password test: ");
+//        try {
+//            if (Employee.validateUser(1, "test1")) {
+//                System.out.println("Employee credentials verified");
+//            } else {
+//                System.out.println("Employee credentials could not be verified");
+//            }
+//        } catch (NonExistentUserException e) {
+//            e.printStackTrace();
+//        } catch (BadPasswordException e) {
+//            e.printStackTrace();
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+
     }
 
 }
