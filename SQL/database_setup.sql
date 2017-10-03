@@ -23,7 +23,7 @@ CREATE TABLE Burger_Order (
   order_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
   user_alias VARCHAR(50) NOT NULL,
   user_phone INTEGER NOT NULL,
-  status BOOLEAN NOT NULL DEFAULT 0,
+  order_completed BOOLEAN NOT NULL DEFAULT 0,
   timestamp TEXT NOT NULL,
   employee_id INTEGER,
   FOREIGN KEY (employee_id) REFERENCES Employee (employee_id)
