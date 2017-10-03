@@ -21,12 +21,14 @@ public class Ingredient {
 
 	}
 	
-	public static void reduceStock(){
+	public static void reduceStock(String ingredientName){
 		//Remove the stock items from the database
+
 	}
 
 	public static int getStockLevel(String ingredientName) {
 		//Get a stock level from the database for a given ingredient
+		//Establish connection to the database
 		File database_file = new File("Burger.sqlite");
 		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
 		try (Connection c = db.connection()) {
@@ -100,9 +102,53 @@ public class Ingredient {
 		}
 		return null;
 	}
+
+	public static int getIngredientID(String ingredientName) {
+		//Get the order for that customer phone
+		//Return the order id
+		int ingredient_id = -1;
+
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT ingredient_id FROM Ingredient WHERE ingredient_name = ?")) {
+				stmt.setString(1, ingredientName);
+				try(ResultSet r = stmt.executeQuery()){
+					while (r.next()){
+						return r.getInt("ingredient_id");
+					}
+				}
+				System.out.println("Ingredient id confirmed");
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return ingredient_id;
+
+	}
 	
-	public static ArrayList<Ingredient> getAllIngredients(){
-		//Loop through the array list of all ingredients 
+	public static ArrayList<String> getAllBurgers(){
+		//Loop through the array list of all burgers
+		return null;
+	}
+
+	public static ArrayList<String> getAllBreads(){
+		//Loop through the array list of all bread
+		return null;
+	}
+
+	public static ArrayList<String> getAllSalads(){
+		//Loop through the array list of all salads
+		return null;
+	}
+
+	public static ArrayList<String> getAllSauces(){
+		//Loop through the array list of all salads
 		return null;
 	}
 

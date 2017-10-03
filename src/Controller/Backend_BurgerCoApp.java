@@ -81,7 +81,10 @@ public class Backend_BurgerCoApp {
 //        Ingredient.restock("Cucumber");
 
         //Test getOrderId
-        System.out.println("Order_id for: " + "Test1 is -> " + Order.getOrderID("Test1"));
+        System.out.println("Order_id for: Test1 is -> " + Order.getOrderID("Test1"));
+
+        //Test getIngredientID
+        System.out.println("Ingredient_id for: Chicken is -> " + Ingredient.getIngredientID("Chicken"));
     }
 
     public void addUsersToDB() {
