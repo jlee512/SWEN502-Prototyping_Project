@@ -34,11 +34,11 @@ INSERT INTO Ingredient(ingredient_type, ingredient_name, unit_price, quantity) V
 
 -- -----------------------Orders-------------------
 INSERT INTO Burger_Order(user_alias, user_phone, timestamp) VALUES
-  ("Test1",0211234567, date("2017-10-03 10:00")),
-  ("Test2",0212345678, date("2017-10-03 11:00")),
-  ("Test3",0213456789, date("2017-10-03 12:00")),
-  ("Test4",0214567890, date("2017-10-03 12:30")),
-  ("Test5",0215678901, date("2017-10-03 13:00"));
+  ("Test1",0211234567, datetime("2017-10-03 10:00")),
+  ("Test2",0212345678, datetime("2017-10-03 11:00")),
+  ("Test3",0213456789, datetime("2017-10-03 12:00")),
+  ("Test4",0214567890, datetime("2017-10-03 12:30")),
+  ("Test5",0215678901, datetime("2017-10-03 13:00"));
 
 -- Order 1
 INSERT INTO Burger_Component(ingredient_id, order_id) VALUES
