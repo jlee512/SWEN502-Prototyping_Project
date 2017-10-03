@@ -1,4 +1,4 @@
-package controller;
+package Controller;
 
 import java.util.ArrayList;
 
@@ -10,9 +10,26 @@ public class Employee {
 	byte[] hash;
 	byte[] salt;
 	int iterations;
-	
-	public void getUserDB(){
+
+	public Employee(int employeeID, String employeeFName, String emloyeeLName, byte[] hash, byte[] salt, int iterations) {
+		//Employee Constructor
+		this.employeeID = employeeID;
+		this.empFirstName = employeeFName;
+		this.empLastName = emloyeeLName;
+		this.hash = hash;
+		this.salt = salt;
+		this.iterations = iterations;
+	}
+
+	public void addEmployeetoDB() {
+		//Add user to the database
+
+	}
+
+	public static Employee getUserDB(int employeeID){
 		//Get user from the database
+
+		return null;
 	}
 	
 	public void validateUser(){
