@@ -37,6 +37,8 @@ public class Display extends Application {
 	ArrayList<String> order_ingredients = new ArrayList<>();
 	String customer_name = "";
 	int phone_number = -1;
+	int user_id = -1;
+	String password = "";
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -324,13 +326,153 @@ public class Display extends Application {
 
 		loginButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				int userID = Integer.parseInt(serverIDIn.getText());
-				String password = passwordField.getText();
+				user_id = Integer.parseInt(serverIDIn.getText());
+				password = passwordField.getText();
 
 				try {
-					if (Employee.validateUser(userID, password)) {
-						System.out.println("Employee #" + userID + " credentials verified");
+					if (Employee.validateUser(user_id, password)) {
+						System.out.println("Employee #" + user_id + " credentials verified");
+						VBox serverlayout3 = new VBox(25);
+						VBox serverlayoutInner3 = new VBox(200);
+						serverlayout3.setStyle("-fx-background-color: #eeeeee");
+						
+						ArrayList<Order> unfilled_orders = Order.getAllOpenOrders();
+						ArrayList<Integer> unfilled_orders_ints = new ArrayList<>();
+						for(int i = 0; i < unfilled_orders.size(); i++) {
+							unfilled_orders_ints.add(unfilled_orders.get(i).getID());
+						}
+						
+						ObservableList<Integer> unfilled_orders_observable = FXCollections.observableArrayList(unfilled_orders_ints);
+						ChoiceBox unfilled_order_list = new ChoiceBox();
+						unfilled_order_list.setItems(unfilled_orders_observable);
+						
+						Employee employee = Employee.getUserDB(user_id);
+						ArrayList<Order> employee_orders = employee.getUserToDoList();
+						ArrayList<Integer> employee_orders_ints = new ArrayList<>();
+						for(int i = 0; i < employee_orders.size(); i++) {
+							employee_orders_ints.add(employee_orders.get(i).getID());
+						}
+						
+						ObservableList<Integer> employee_orders_observable = FXCollections.observableArrayList(employee_orders_ints);
+						ChoiceBox employee_order_list = new ChoiceBox();
+						employee_order_list.setItems(employee_orders_observable);
+						
+						Button assign_order = new Button("Assign Order");
+						assign_order.setOnAction(new EventHandler<ActionEvent>() {
+							@Override public void handle(ActionEvent e) {
+								//Need to get the selected unassigned order
+								Employee employee = null;
+								try {
+									employee = Employee.getUserDB(user_id);
+								} catch (NonExistentUserException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								int order_takeup_id = Integer.parseInt(unfilled_order_list.getValue().toString());
+								//Print out order list (drop down menu)
+								//Select order #
+								//Assign to employee 
+								employee.assignOrder(order_takeup_id);
+								
+								/**Up to here we know its working*/
+								System.out.println("Check from here");
+								
+								ArrayList<Order> unfilled_orders = Order.getAllOpenOrders();
+								System.out.println("Unfilled order list completed");
+					
+								ArrayList<Integer> unfilled_orders_ints = new ArrayList<>();
+								for(int i = 0; i < unfilled_orders.size(); i++) {
+									unfilled_orders_ints.add(unfilled_orders.get(i).getID());
+									System.out.println(unfilled_orders.get(i).getID());
+								}
+								
+								System.out.println("Check up to here");
+								
+								unfilled_order_list.setItems(FXCollections.observableArrayList(unfilled_orders_ints));
+								
+								ArrayList<Order> employee_orders = employee.getUserToDoList();
+								ArrayList<Integer> employee_orders_ints = new ArrayList<>();
+								for(int i = 0; i < employee_orders.size(); i++) {
+									employee_orders_ints.add(employee_orders.get(i).getID());
+								}
+								
+								employee_order_list.setItems(FXCollections.observableArrayList(employee_orders_ints));
+								
+								primaryStage.setScene(server2);
+								
+							}
+						});
+						
+						Button completeOrder = new Button("Complete Order");
+						completeOrder.setOnAction(new EventHandler<ActionEvent>() {
+							@Override public void handle(ActionEvent e) {
+								//Get the list of orders assigned
+								//Select out of list an order
+								//Order number
+								//Need to get the employee's orders that has been selected
+								Employee employee = null;
+								try {
+									employee = Employee.getUserDB(user_id);
+								} catch (NonExistentUserException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+								int order_completed_id = (int) employee_order_list.getValue();
+								//Print out order list (drop down menu)
+								//Select order #
+								//Assign to employee 
+								employee.completeOrder(order_completed_id);
+								
+								ArrayList<Order> employee_orders = employee.getUserToDoList();
+								ArrayList<Integer> employee_orders_ints = new ArrayList<>();
+								for(int i = 0; i < employee_orders.size(); i++) {
+									employee_orders_ints.add(employee_orders.get(i).getID());
+									System.out.println(employee_orders.get(i).getID());
+								}
+								
+								employee_order_list.setItems(FXCollections.observableArrayList(employee_orders_ints));
+								primaryStage.setScene(server2);
+							}
+						});
+						
+						assign_order.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+						completeOrder.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+						serverlayout3.getChildren().addAll(unfilled_order_list, assign_order, employee_order_list, completeOrder);
+						serverlayout3.getChildren().add(serverlayoutInner3);
+						serverlayout3.setAlignment(Pos.CENTER);
+						serverlayoutInner3.setAlignment(Pos.CENTER);
+						server3 = new Scene(serverlayout3, 420, 600);
 						primaryStage.setScene(server2);
+						
+						/**Display the list of ingredients in checkboxes
+						Select ingredient to restock
+						Confirm restock -- connect to the restock item method*/
+						
+						VBox serverlayout4 = new VBox(25);
+						VBox serverlayoutInner = new VBox(200);
+						serverlayout4.setStyle("-fx-background-color: #eeeeee");
+								
+						ObservableList<String> restockIngredients = FXCollections.observableArrayList(Ingredient.getRestockIngredients());
+						ChoiceBox torestock = new ChoiceBox();
+						torestock.setItems(restockIngredients);
+						
+						Button confirm_restock = new Button("Restock Item");
+						confirm_restock.setOnAction(new EventHandler<ActionEvent>() {
+							@Override public void handle(ActionEvent e) {
+								String restock_ingredient = torestock.getValue().toString();
+								Ingredient.restock(restock_ingredient);
+								
+								torestock.setItems(FXCollections.observableArrayList(Ingredient.getRestockIngredients()));
+								primaryStage.setScene(server2);
+							}
+						});
+						
+						confirm_restock.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+						serverlayout4.getChildren().addAll(torestock, confirm_restock);
+						serverlayout4.getChildren().addAll(serverlayoutInner);
+						serverlayout4.setAlignment(Pos.CENTER);
+						serverlayoutInner.setAlignment(Pos.CENTER);
+						server4 = new Scene(serverlayout4, 420, 600);
 						
 					} else {
 						System.out.println("Employee credentials could not be verified");
@@ -364,20 +506,19 @@ public class Display extends Application {
 		orderHeader.setFill(Color.web("#ee0000"));		
 		HBox orderBox = new HBox(10);
 
-		
-		Button Restock = new Button("Restock");
-		Restock.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		Restock.setOnAction(new EventHandler<ActionEvent>() {
-			@Override public void handle(ActionEvent e) {
-				primaryStage.setScene(server4);
-			}
-		});
-		
 		Button getToDoList = new Button("Get To Do List");
 		getToDoList.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 		getToDoList.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				primaryStage.setScene(server3);
+			}
+		});
+	
+		Button Restock = new Button("Restock");
+		Restock.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		Restock.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				primaryStage.setScene(server4);
 			}
 		});
 		
@@ -389,70 +530,7 @@ public class Display extends Application {
 		
 		//Server scene 3 - Assign & complete orders 
 		
-		VBox serverlayout3 = new VBox(25);
-		VBox serverlayoutInner3 = new VBox(200);
-		serverlayout3.setStyle("-fx-background-color: #eeeeee");
-		
-		Button assign_order = new Button("Assign Order");
-		assign_order.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		getToDoList.setOnAction(new EventHandler<ActionEvent>() {
-			@Override public void handle(ActionEvent e) {
-				//Need to get the list of unassigned orders
-				ChoiceBox torestock = new ChoiceBox(FXCollections.observableArrayList(Order.getAllOpenOrders()));
-				//Print out order list (drop down menu)
-				//Select order #
-				//Assign to employee 
-			}
-		});
-		
-		Button completeOrder = new Button("Complete Order");
-		completeOrder.setOnAction(e -> primaryStage.setScene(server2));
-		completeOrder.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		completeOrder.setOnAction(new EventHandler<ActionEvent>() {
-			@Override public void handle(ActionEvent e) {
-				//Get the list of orders assigned
-				//Select out of list an order
-				//Order number
-				//Call method to complete
-			}
-		});
-		
-		serverlayout3.getChildren().addAll(assign_order, completeOrder);
-		serverlayout3.getChildren().addAll(serverlayoutInner3);
-		serverlayout3.setAlignment(Pos.CENTER);
-		serverlayoutInner3.setAlignment(Pos.CENTER);
-		server3 = new Scene(serverlayout3, 420, 600);
-		
-		//Server scene 4 - Restocking
-	
-		/**Display the list of ingredients in checkboxes
-		Select ingredient to restock
-		Confirm restock -- connect to the restock item method*/
-		
-		VBox serverlayout4 = new VBox(25);
-		VBox serverlayoutInner = new VBox(200);
-		serverlayout4.setStyle("-fx-background-color: #eeeeee");
-				
-		ObservableList<String> restockIngredients = FXCollections.observableArrayList(Ingredient.getRestockIngredients());
-		ChoiceBox torestock = new ChoiceBox();
-		torestock.setItems(restockIngredients);
-		
-		Button confirm_restock = new Button("Restock Item");
-		confirm_restock.setOnAction(new EventHandler<ActionEvent>() {
-			@Override public void handle(ActionEvent e) {
-				String restock_ingredient = torestock.getValue().toString();
-				Ingredient.restock(restock_ingredient);
-				torestock.setItems(FXCollections.observableArrayList(Ingredient.getRestockIngredients()));
-				primaryStage.setScene(server2);
-			}
-		});
-		
-		confirm_restock.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		serverlayout4.getChildren().addAll(torestock, confirm_restock);
-		serverlayout4.getChildren().addAll(serverlayoutInner);
-		serverlayout4.setAlignment(Pos.CENTER);
-		serverlayoutInner.setAlignment(Pos.CENTER);
-		server4 = new Scene(serverlayout4, 420, 600);
+		//Server scene  4 - Restocking
 
 	}
 
