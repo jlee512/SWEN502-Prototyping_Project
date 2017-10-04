@@ -96,6 +96,7 @@ public class Order {
 
         for (int i = 0; i < inputingredients.size(); i++) {
             int ingid = Ingredient.getIngredientID(inputingredients.get(i));
+            Ingredient.reduceStock(inputingredients.get(i));
 
             File database_file = new File("Burger.sqlite");
             LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
