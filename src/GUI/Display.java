@@ -1,7 +1,9 @@
 package GUI;
 
 import java.awt.Insets;
+import java.util.ArrayList;
 
+import Controller.Ingredient;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -61,7 +63,7 @@ public class Display extends Application {
 		selectBurger.setFill(Color.web("#ee0000"));		
 
 		VBox layout2 = new VBox(75);
-		ChoiceBox burger = new ChoiceBox(FXCollections.observableArrayList("Chicken", "Beef", "Lamb", "Vege"));
+		ChoiceBox burger = new ChoiceBox(FXCollections.observableArrayList(Ingredient.getAllBurgers()));
 
 		Button meatNext = new Button("Next");
 		meatNext.setOnAction(e -> primaryStage.setScene(scene3));
@@ -81,7 +83,7 @@ public class Display extends Application {
 		selectBun.setFill(Color.web("#ee0000"));		
 
 		VBox layout3 = new VBox(75);
-		ChoiceBox bun = new ChoiceBox(FXCollections.observableArrayList("White", "Wheat"));
+		ChoiceBox bun = new ChoiceBox(FXCollections.observableArrayList(Ingredient.getAllBreads()));
 
 		Button bunNext = new Button("Next");
 		bunNext.setOnAction(e -> primaryStage.setScene(scene4));
@@ -94,36 +96,49 @@ public class Display extends Application {
 
 		// Scene 4
 
-		Text selectSalad = new Text("Choose your salad:");
+		Text selectSalad = new Text("Choose your filling:");
 		selectSalad.setFont(Font.font ("Helvetica", 25));
 		selectSalad.setFill(Color.web("#ee0000"));		
 
 		VBox layout4 = new VBox(75);
 		HBox layout4Inner = new HBox(20);
 
-		CheckBox salad1 = new CheckBox("Lettuce");
-		CheckBox salad2 = new CheckBox("Tomatoes");
-		CheckBox salad3 = new CheckBox("Cucumber");
-		salad1.setSelected(true);
+		ArrayList<String> fillings = Ingredient.getAllFillings();
+		ArrayList<CheckBox> filling_checkboxes = new ArrayList<>();
+		for (int i = 0; i < fillings.size(); i++) {
+			CheckBox filling = new CheckBox(fillings.get(i));
+			if (i == 0) {
+				filling.setSelected(true);
+			}
+			layout4Inner.getChildren().add(filling);
+			filling_checkboxes.add(filling);
+		}
 
 		Button saladNext = new Button("Next");
 
 		saladNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
-				System.out.println("Salads:");
-				if (salad1.isSelected())
-				{
-					System.out.println("Lettuce is selected");
+				System.out.println("Fillings:");
+
+				for (int i = 0; i < filling_checkboxes.size(); i++) {
+					if (filling_checkboxes.get(i).isSelected()) {
+						System.out.println(fillings.get(i));
+					}
 				}
-				if (salad2.isSelected())
-				{
-					System.out.println("Tomatoes is selected");
-				}
-				if (salad3.isSelected())
-				{
-					System.out.println("Cucumber is selected");
-				}
+
+//				if (salad1.isSelected())
+//				{
+//					System.out.println("Lettuce is selected");
+//				}
+//				if (salad2.isSelected())
+//				{
+//					System.out.println("Tomatoes is selected");
+//				}
+//				if (salad3.isSelected())
+//				{
+//					System.out.println("Cucumber is selected");
+//				}
 				primaryStage.setScene(scene5);
 			}
 		}
@@ -131,7 +146,6 @@ public class Display extends Application {
 
 		saladNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout4Inner.getChildren().addAll(salad1,salad2,salad3);
 		layout4.getChildren().addAll(selectSalad,layout4Inner,saladNext);
 		layout4.setAlignment(Pos.CENTER);
 		layout4Inner.setAlignment(Pos.CENTER);
