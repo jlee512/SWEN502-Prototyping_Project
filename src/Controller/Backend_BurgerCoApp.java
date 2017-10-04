@@ -40,7 +40,7 @@ public class Backend_BurgerCoApp {
         //Once logged in - display unfilled orders
         ArrayList<Order> unfilled_orders = Order.getAllOpenOrders();
         for (int i = 0; i < unfilled_orders.size(); i++) {
-            System.out.println("Unfilled -> Order id: " + unfilled_orders.get(i).getOrderID() + " " + unfilled_orders.get(i).getTimestamp());
+            System.out.println("Unfilled -> Order id: " + unfilled_orders.get(i).getID() + " " + unfilled_orders.get(i).getTimestamp());
         }
 
         //And display the users orders
@@ -52,7 +52,7 @@ public class Backend_BurgerCoApp {
         }
         //Test output for Java FX
         for (int i = 0; i < employee_orders.size(); i++) {
-            System.out.print("Order #" + employee_orders.get(i).getOrderID() + ": ");
+            System.out.print("Order #" + employee_orders.get(i).getID() + ": ");
             for (int j = 0; j < employee_orders.get(i).getIngredients().size(); j++) {
                 if (j < (employee_orders.get(i).getIngredients().size() - 1)) {
                     System.out.print(employee_orders.get(i).getIngredients().get(j) + ", ");
