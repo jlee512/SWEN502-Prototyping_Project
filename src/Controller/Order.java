@@ -77,7 +77,10 @@ public class Order {
                 stmt.setInt(2, custphone);
                 stmt.setString(3, strDate);
                 stmt.executeUpdate();
-                System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added");
+
+                double total_price = Order.calculateTotalPrice(ingredients);
+
+                System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added, Total Price: " + total_price);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
