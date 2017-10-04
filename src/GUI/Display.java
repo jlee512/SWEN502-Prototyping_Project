@@ -73,7 +73,10 @@ public class Display extends Application {
 		selectBurger.setFill(Color.web("#ee0000"));		
 
 		VBox layout2 = new VBox(75);
-		ChoiceBox burger = new ChoiceBox(FXCollections.observableArrayList(Ingredient.getAllBurgers()));
+		
+		ObservableList<String> burger_list = FXCollections.observableArrayList(Ingredient.getAllBurgers());
+		ChoiceBox burger = new ChoiceBox();
+		burger.setItems(burger_list);
 
 		Button meatNext = new Button("Next");
 		meatNext.setOnAction(e -> primaryStage.setScene(scene3));
@@ -93,7 +96,9 @@ public class Display extends Application {
 		selectBun.setFill(Color.web("#ee0000"));		
 
 		VBox layout3 = new VBox(75);
-		ChoiceBox bun = new ChoiceBox(FXCollections.observableArrayList(Ingredient.getAllBreads()));
+		ObservableList<String> bun_list = FXCollections.observableArrayList(Ingredient.getAllBreads());
+		ChoiceBox bun = new ChoiceBox();
+		bun.setItems(bun_list);
 
 		Button bunNext = new Button("Next");
 		bunNext.setOnAction(e -> primaryStage.setScene(scene4));
@@ -231,11 +236,13 @@ public class Display extends Application {
 				//				System.out.println("Burger");
 				String burger_ordered = burger.getValue().toString();
 				order_ingredients.add(burger_ordered);
+				burger.setItems(FXCollections.observableArrayList(Ingredient.getAllBurgers()));
 				//				System.out.println(burger_ordered);
 
 				//				System.out.println("Bun");
 				String bun_ordered = bun.getValue().toString();
 				order_ingredients.add(bun_ordered);
+				bun.setItems(FXCollections.observableArrayList(Ingredient.getAllBreads()));
 				//				System.out.println(burger_ordered);
 
 				//				System.out.println("Filling");
