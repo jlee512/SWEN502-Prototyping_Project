@@ -84,7 +84,7 @@ public class Testing {
 	@Test
 	public void testOrderAddition(){
 	
-    //Test order addition
+    //Test order addition -- 
 //  ArrayList<String> ingredients = new ArrayList<>();
 //  ingredients.add("White bread");
 //  ingredients.add("Lamb");
