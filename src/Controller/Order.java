@@ -11,7 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Order {
 
@@ -66,11 +68,19 @@ public class Order {
         File database_file = new File("Burger.sqlite");
         LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
         try (Connection c = db.connection()) {
-            try (PreparedStatement stmt = c.prepareStatement("INSERT INTO Burger_Order (user_alias, user_phone) VALUES (?, ?)")) {
+            try (PreparedStatement stmt = c.prepareStatement("INSERT INTO Burger_Order (user_alias, user_phone, timestamp) VALUES (?, ?, ?)")) {
+
+                SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date now = new Date();
+                String strDate = sdfDate.format(now);
                 stmt.setString(1, custname);
                 stmt.setInt(2, custphone);
+                stmt.setString(3, strDate);
                 stmt.executeUpdate();
-                System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added");
+
+                double total_price = Order.calculateTotalPrice(ingredients);
+
+                System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added, Total Price: " + total_price);
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -89,6 +99,7 @@ public class Order {
 
         for (int i = 0; i < inputingredients.size(); i++) {
             int ingid = Ingredient.getIngredientID(inputingredients.get(i));
+            Ingredient.reduceStock(inputingredients.get(i));
 
             File database_file = new File("Burger.sqlite");
             LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
@@ -139,17 +150,6 @@ public class Order {
         return orderid;
     }
 
-
-    //
-    public static Order getOrder() {
-        //get Order
-        return null;
-    }
-
-    public void completeOrder() {
-        //Complete the order and remove ingredients from the database
-    }
-
     //Get all open orders which are not yet assigned a staff member
     public static ArrayList<Order> getAllOpenOrders() {
 
@@ -196,5 +196,14 @@ public class Order {
             e.printStackTrace();
         }
         return null;
+    }
+    
+    public static double calculateTotalPrice(ArrayList<String> ingredients){
+  
+    	double totalprice = 5.00;
+    	for (int i = 0; i < ingredients.size(); i++){
+    		totalprice += Ingredient.getIngredientPrice(ingredients.get(i));
+    	}
+    	return totalprice;
     }
 }

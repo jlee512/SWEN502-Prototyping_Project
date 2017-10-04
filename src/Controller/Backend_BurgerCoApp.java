@@ -85,6 +85,37 @@ public class Backend_BurgerCoApp {
 
         //Test getIngredientID
         System.out.println("Ingredient_id for: Chicken is -> " + Ingredient.getIngredientID("Chicken"));
+
+        //Test order addition
+        ArrayList<String> ingredients = new ArrayList<>();
+        ingredients.add("White bread");
+        ingredients.add("Lamb");
+        ingredients.add("Mint");
+//        Order.createOrder("Julian", 123, ingredients);
+        Order.createOrder("Maddy", 12345, ingredients);
+
+        // Test all ingredients of particular types
+        ArrayList<String> burgers = Ingredient.getAllBurgers();
+        for (int i = 0; i < burgers.size(); i++) {
+            System.out.println(burgers.get(i));
+        }
+
+        ArrayList<String> breads = Ingredient.getAllBreads();
+        for (int i = 0; i < breads.size(); i++) {
+            System.out.println(breads.get(i));
+        }
+
+        ArrayList<String> fillings = Ingredient.getAllFillings();
+        for (int i = 0; i < fillings.size(); i++) {
+            System.out.println(fillings.get(i));
+        }
+
+        ArrayList<String> sauces = Ingredient.getAllSauces();
+        for (int i = 0; i < sauces.size(); i++) {
+            System.out.println(sauces.get(i));
+        }
+
+        Ingredient.reduceStock("Onion");
     }
 
     public void addUsersToDB() {
