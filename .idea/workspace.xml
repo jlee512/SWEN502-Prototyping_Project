@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1c3a82-ea91-4f64-b86b-3131f8228d6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/database_queries.sql" afterPath="$PROJECT_DIR$/SQL/database_queries.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Ingredient.java" afterPath="$PROJECT_DIR$/src/Controller/Ingredient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Order.java" afterPath="$PROJECT_DIR$/src/Controller/Order.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -161,31 +158,30 @@
       <file leaf-file-name="Order.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5445">
-              <caret line="174" column="41" lean-forward="true" selection-start-line="174" selection-start-column="41" selection-end-line="174" selection-end-column="41" />
+            <state relative-caret-position="382">
+              <caret line="83" column="78" lean-forward="true" selection-start-line="83" selection-start-column="78" selection-end-line="83" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#499#500#0" expanded="true" />
-                <element signature="e#520#521#0" expanded="true" />
-                <element signature="e#553#554#0" expanded="true" />
-                <element signature="e#576#577#0" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
+                <element signature="e#599#600#0" expanded="true" />
                 <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#666#667#0" expanded="true" />
-                <element signature="e#693#694#0" expanded="true" />
-                <element signature="e#726#727#0" expanded="true" />
-                <element signature="e#749#750#0" expanded="true" />
-                <element signature="e#796#797#0" expanded="true" />
-                <element signature="e#829#830#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-                <element signature="e#920#921#0" expanded="true" />
-                <element signature="e#966#967#0" expanded="true" />
-                <element signature="e#991#992#0" expanded="true" />
-                <marker date="1507075312528" expanded="true" signature="1493:1556" ph="INSERT INTO Burger_Order... " />
-                <marker date="1507075312528" expanded="true" signature="2601:2669" ph="INSERT INTO Burger_Component... " />
-                <marker date="1507075312528" expanded="true" signature="3467:3519" ph="SELECT order... Burger_Order" />
-                <marker date="1507075312528" expanded="true" signature="3467:3521" ph="SELECT order... Burger_Order" />
-                <marker date="1507075312528" expanded="true" signature="4462:4594" ph="SELECT o.ord... Burger_Order" />
+                <element signature="e#665#666#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#730#731#0" expanded="true" />
+                <element signature="e#762#763#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#838#839#0" expanded="true" />
+                <element signature="e#874#875#0" expanded="true" />
+                <element signature="e#906#907#0" expanded="true" />
+                <element signature="e#956#957#0" expanded="true" />
+                <element signature="e#998#999#0" expanded="true" />
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1101#1102#0" expanded="true" />
+                <element signature="e#1150#1151#0" expanded="true" />
+                <element signature="e#1184#1185#0" expanded="true" />
+                <marker date="1507075524762" expanded="true" signature="1734:1797" ph="INSERT INTO Burger_Order... " />
+                <marker date="1507075524762" expanded="true" signature="2919:2987" ph="INSERT INTO Burger_Component... " />
+                <marker date="1507075524762" expanded="true" signature="3931:3985" ph="SELECT order... Burger_Order" />
+                <marker date="1507075524762" expanded="true" signature="5172:5304" ph="SELECT o.ord... Burger_Order" />
               </folding>
             </state>
           </provider>
@@ -907,12 +903,12 @@
       <updated>1506981180889</updated>
       <workItem from="1506981185579" duration="11857000" />
       <workItem from="1507006504808" duration="13680000" />
-      <workItem from="1507064006707" duration="9390000" />
+      <workItem from="1507064006707" duration="9586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34927000" />
+    <option name="totallyTimeSpent" value="35123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -988,27 +984,26 @@
           <caret line="70" column="18" lean-forward="false" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
             <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <marker date="1507075312528" expanded="true" signature="1493:1556" ph="INSERT INTO Burger_Order... " />
-            <marker date="1507075312528" expanded="true" signature="2601:2669" ph="INSERT INTO Burger_Component... " />
-            <marker date="1507075312528" expanded="true" signature="3467:3519" ph="SELECT order... Burger_Order" />
-            <marker date="1507075312528" expanded="true" signature="3467:3521" ph="SELECT order... Burger_Order" />
-            <marker date="1507075312528" expanded="true" signature="4462:4594" ph="SELECT o.ord... Burger_Order" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1101#1102#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <marker date="1507075524762" expanded="true" signature="1734:1797" ph="INSERT INTO Burger_Order... " />
+            <marker date="1507075524762" expanded="true" signature="2919:2987" ph="INSERT INTO Burger_Component... " />
+            <marker date="1507075524762" expanded="true" signature="3931:3985" ph="SELECT order... Burger_Order" />
+            <marker date="1507075524762" expanded="true" signature="5172:5304" ph="SELECT o.ord... Burger_Order" />
           </folding>
         </state>
       </provider>
@@ -1320,31 +1315,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5445">
-          <caret line="174" column="41" lean-forward="true" selection-start-line="174" selection-start-column="41" selection-end-line="174" selection-end-column="41" />
+        <state relative-caret-position="382">
+          <caret line="83" column="78" lean-forward="true" selection-start-line="83" selection-start-column="78" selection-end-line="83" selection-end-column="78" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#499#500#0" expanded="true" />
-            <element signature="e#520#521#0" expanded="true" />
-            <element signature="e#553#554#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
             <element signature="e#629#630#0" expanded="true" />
-            <element signature="e#666#667#0" expanded="true" />
-            <element signature="e#693#694#0" expanded="true" />
-            <element signature="e#726#727#0" expanded="true" />
-            <element signature="e#749#750#0" expanded="true" />
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#829#830#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
-            <element signature="e#920#921#0" expanded="true" />
-            <element signature="e#966#967#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-            <marker date="1507075312528" expanded="true" signature="1493:1556" ph="INSERT INTO Burger_Order... " />
-            <marker date="1507075312528" expanded="true" signature="2601:2669" ph="INSERT INTO Burger_Component... " />
-            <marker date="1507075312528" expanded="true" signature="3467:3519" ph="SELECT order... Burger_Order" />
-            <marker date="1507075312528" expanded="true" signature="3467:3521" ph="SELECT order... Burger_Order" />
-            <marker date="1507075312528" expanded="true" signature="4462:4594" ph="SELECT o.ord... Burger_Order" />
+            <element signature="e#665#666#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#730#731#0" expanded="true" />
+            <element signature="e#762#763#0" expanded="true" />
+            <element signature="e#802#803#0" expanded="true" />
+            <element signature="e#838#839#0" expanded="true" />
+            <element signature="e#874#875#0" expanded="true" />
+            <element signature="e#906#907#0" expanded="true" />
+            <element signature="e#956#957#0" expanded="true" />
+            <element signature="e#998#999#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1101#1102#0" expanded="true" />
+            <element signature="e#1150#1151#0" expanded="true" />
+            <element signature="e#1184#1185#0" expanded="true" />
+            <marker date="1507075524762" expanded="true" signature="1734:1797" ph="INSERT INTO Burger_Order... " />
+            <marker date="1507075524762" expanded="true" signature="2919:2987" ph="INSERT INTO Burger_Component... " />
+            <marker date="1507075524762" expanded="true" signature="3931:3985" ph="SELECT order... Burger_Order" />
+            <marker date="1507075524762" expanded="true" signature="5172:5304" ph="SELECT o.ord... Burger_Order" />
           </folding>
         </state>
       </provider>
