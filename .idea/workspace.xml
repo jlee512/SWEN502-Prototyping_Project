@@ -4,6 +4,7 @@
     <list default="true" id="ef1c3a82-ea91-4f64-b86b-3131f8228d6e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Burger.sqlite" afterPath="$PROJECT_DIR$/Burger.sqlite" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Ingredient.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Ingredient.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Order.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Order.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" afterPath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" />
@@ -163,7 +164,7 @@
       <file leaf-file-name="Order.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2442">
+            <state relative-caret-position="-1947">
               <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -195,28 +196,29 @@
       <file leaf-file-name="Ingredient.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="333" column="13" lean-forward="true" selection-start-line="333" selection-start-column="13" selection-end-line="333" selection-end-column="13" />
+            <state relative-caret-position="890">
+              <caret line="353" column="57" lean-forward="false" selection-start-line="353" selection-start-column="57" selection-end-line="353" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1507078014937" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
-                <marker date="1507078014937" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
-                <marker date="1507078014937" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
-                <marker date="1507078014937" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
-                <marker date="1507078014937" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
-                <marker date="1507078014937" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
-                <marker date="1507078014937" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
+                <marker date="1507078264426" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
+                <marker date="1507078264426" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
+                <marker date="1507078264426" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
+                <marker date="1507078264426" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
+                <marker date="1507078264426" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+                <marker date="1507078264426" expanded="true" signature="11817:11908" ph="SELECT i.uni... Ingredient" />
               </folding>
             </state>
           </provider>
@@ -225,8 +227,8 @@
       <file leaf-file-name="Backend_BurgerCoApp.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="94" column="53" lean-forward="false" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
+            <state relative-caret-position="296">
+              <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -920,12 +922,12 @@
       <updated>1506981180889</updated>
       <workItem from="1506981185579" duration="11857000" />
       <workItem from="1507006504808" duration="13680000" />
-      <workItem from="1507064006707" duration="12074000" />
+      <workItem from="1507064006707" duration="12324000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37611000" />
+    <option name="totallyTimeSpent" value="37861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -1049,24 +1051,25 @@
           <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1507078014937" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="11817:11908" ph="SELECT i.uni... Ingredient" />
           </folding>
         </state>
       </provider>
@@ -1138,6 +1141,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1279,46 +1285,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="94" column="53" lean-forward="false" selection-start-line="94" selection-start-column="53" selection-end-line="94" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2442">
-          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#723#724#0" expanded="true" />
-            <element signature="e#755#756#0" expanded="true" />
-            <element signature="e#788#789#0" expanded="true" />
-            <element signature="e#820#821#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-            <element signature="e#932#933#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1112#1113#0" expanded="true" />
-            <element signature="e#1159#1160#0" expanded="true" />
-            <element signature="e#1208#1209#0" expanded="true" />
-            <element signature="e#1242#1243#0" expanded="true" />
-            <marker date="1507077659749" expanded="true" signature="1792:1869" ph="INSERT INTO Burger_Order... " />
-            <marker date="1507077659749" expanded="true" signature="3278:3346" ph="INSERT INTO Burger_Component... " />
-            <marker date="1507077659749" expanded="true" signature="4290:4344" ph="SELECT order... Burger_Order" />
-            <marker date="1507077659749" expanded="true" signature="5327:5459" ph="SELECT o.ord... Burger_Order" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Ingredient">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1353,30 +1319,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="333" column="13" lean-forward="true" selection-start-line="333" selection-start-column="13" selection-end-line="333" selection-end-column="13" />
+        <state relative-caret-position="296">
+          <caret line="120" column="16" lean-forward="false" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1507078014937" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
-            <marker date="1507078014937" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078014937" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Order.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1947">
+          <caret line="88" column="9" lean-forward="true" selection-start-line="88" selection-start-column="9" selection-end-line="88" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#687#688#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#788#789#0" expanded="true" />
+            <element signature="e#820#821#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#896#897#0" expanded="true" />
+            <element signature="e#932#933#0" expanded="true" />
+            <element signature="e#964#965#0" expanded="true" />
+            <element signature="e#1014#1015#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1112#1113#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <marker date="1507077659749" expanded="true" signature="1792:1869" ph="INSERT INTO Burger_Order... " />
+            <marker date="1507077659749" expanded="true" signature="3278:3346" ph="INSERT INTO Burger_Component... " />
+            <marker date="1507077659749" expanded="true" signature="4290:4344" ph="SELECT order... Burger_Order" />
+            <marker date="1507077659749" expanded="true" signature="5327:5459" ph="SELECT o.ord... Burger_Order" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="890">
+          <caret line="353" column="57" lean-forward="false" selection-start-line="353" selection-start-column="57" selection-end-line="353" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1507078264426" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
+            <marker date="1507078264426" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078264426" expanded="true" signature="11817:11908" ph="SELECT i.uni... Ingredient" />
           </folding>
         </state>
       </provider>

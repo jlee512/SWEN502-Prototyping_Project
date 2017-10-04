@@ -100,7 +100,7 @@ public class Backend_BurgerCoApp {
             System.out.println(burgers.get(i));
         }
 
-        ArrayList<String> breads = Ingredient.getAllBreads();
+        ArrayList<Double> breads = Ingredient.getAllBreadPrices();
         for (int i = 0; i < breads.size(); i++) {
             System.out.println(breads.get(i));
         }

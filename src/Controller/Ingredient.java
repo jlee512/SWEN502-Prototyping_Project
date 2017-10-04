@@ -339,4 +339,27 @@ public class Ingredient {
 		}
 		return null;
 	}
+
+	public static double getIngredientPrice(String ingredientName) {
+		//Loop through the array list of all burgers
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.unit_price FROM Ingredient AS i, Ingredient_type AS it WHERE i.ingredient_name = ?;")) {
+
+				stmt.setString(1, ingredientName);
+
+				try (ResultSet r = stmt.executeQuery()) {
+					while (r.next()) {
+						return r.getDouble("unit_price");
+					}
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
