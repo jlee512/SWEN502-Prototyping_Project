@@ -157,7 +157,7 @@ public class Display extends Application {
 		sauceNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 
-				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
+				
 				System.out.println("Sauces:");
 				if (sauce1.isSelected())
 				{
@@ -172,7 +172,9 @@ public class Display extends Application {
 					System.out.println("Aoli is selected");
 				}
 				primaryStage.setScene(scene6);
+				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
 			}
+			
 		}    
 				);
 
@@ -197,15 +199,21 @@ public class Display extends Application {
 
 		Text userName = new Text("Name:");
 		TextField userNameIn = new TextField();
+		userNameIn.getText();
+		//System.out.println(userNameIn);
 
 		Text userPhone = new Text("Phone:");
 		TextField userPhoneIn = new TextField();
+		userPhoneIn.getText();
+		//System.out.println(userPhoneIn);
 
 		Button detailsNext = new Button("Next");
 		detailsNext.setOnAction(e -> primaryStage.setScene(scene7));
 
 		detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-
+		
+		//layout6User.setConstraints(userNameIn);
+		detailVBox.getChildren().add(userNameIn);
 		layout6User.getChildren().addAll(userName, userNameIn);
 		layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
 		detailVBox.getChildren().addAll(layout6User, layout6Pass);
@@ -218,6 +226,7 @@ public class Display extends Application {
 		// Scene 7
 
 		Text confirm = new Text("Confirm your order:");
+		
 		confirm.setFont(Font.font ("Helvetica", 25));
 		confirm.setFill(Color.web("#ee0000"));		
 
