@@ -19,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
@@ -303,8 +304,9 @@ public class Display extends Application {
 		Text serverID = new Text("UserID:");
 		TextField serverIDIn = new TextField();
 
-		Text staffPass = new Text("Password:");
-		TextField staffPassIn = new TextField();
+		Text staffPass = new Text("Password:");		
+		PasswordField passwordField = new PasswordField();
+		passwordField.setPromptText("Your password");
 
 		Button loginButton = new Button("Login");
 
@@ -315,7 +317,7 @@ public class Display extends Application {
 		loginButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				int userID = Integer.parseInt(serverIDIn.getText());
-				String password = staffPassIn.getText();
+				String password = passwordField.getText();
 
 				try {
 					if (Employee.validateUser(userID, password)) {
@@ -335,7 +337,7 @@ public class Display extends Application {
 		});
 
 		server1ID.getChildren().addAll(serverID, serverIDIn);
-		server1Pass.getChildren().addAll(staffPass, staffPassIn);
+		server1Pass.getChildren().addAll(staffPass, passwordField);
 		serverVBox.getChildren().addAll(server1ID, server1Pass, noaccess);
 		serverlayout1.getChildren().addAll(serverVBox, loginButton);
 		server1ID.setAlignment(Pos.CENTER);
