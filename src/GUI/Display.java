@@ -35,7 +35,7 @@ public class Display extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 
-		primaryStage.setTitle("My First JavaFX GUI");
+		primaryStage.setTitle("Welcome to Happy Burger");
 		// Scene 1
 
 		Text title = new Text("Happy Burger");
@@ -55,7 +55,7 @@ public class Display extends Application {
 		layout1.getChildren().addAll(title, layout1Inner);
 		layout1.setAlignment(Pos.CENTER);
 		layout1Inner.setAlignment(Pos.CENTER);
-		scene1 = new Scene(layout1, 320, 480);
+		scene1 = new Scene(layout1, 420, 600);
 
 		primaryStage.setScene(scene1);
 		primaryStage.show();
@@ -76,7 +76,7 @@ public class Display extends Application {
 
 		layout2.getChildren().addAll(selectBurger, burger, meatNext);
 		layout2.setAlignment(Pos.CENTER);
-		scene2 = new Scene(layout2, 320, 480);
+		scene2 = new Scene(layout2, 420, 600);
 
 		BorderPane componentLayout = new BorderPane(); 
 
@@ -96,7 +96,7 @@ public class Display extends Application {
 
 		layout3.getChildren().addAll(selectBun, bun, bunNext);
 		layout3.setAlignment(Pos.CENTER);
-		scene3 = new Scene(layout3, 320, 480);
+		scene3 = new Scene(layout3, 420, 600);
 
 		// Scene 4
 
@@ -132,7 +132,7 @@ public class Display extends Application {
 		layout4.getChildren().addAll(selectSalad,layout4Inner,saladNext);
 		layout4.setAlignment(Pos.CENTER);
 		layout4Inner.setAlignment(Pos.CENTER);
-		scene4 = new Scene(layout4, 320, 480);
+		scene4 = new Scene(layout4, 420, 600);
 
 		// Scene 5
 
@@ -170,7 +170,7 @@ public class Display extends Application {
 		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext);
 		layout5.setAlignment(Pos.CENTER);
 		layout5Inner.setAlignment(Pos.CENTER);
-		scene5 = new Scene(layout5, 320, 480);
+		scene5 = new Scene(layout5, 420, 600);
 
 		// Scene 6
 
@@ -206,7 +206,7 @@ public class Display extends Application {
 		layout6User.setAlignment(Pos.CENTER);
 		layout6Pass.setAlignment(Pos.CENTER);
 		layout6.setAlignment(Pos.CENTER);
-		scene6 = new Scene(layout6, 320, 480);
+		scene6 = new Scene(layout6, 420, 600);
 
 		// Scene 7
 
@@ -269,7 +269,7 @@ public class Display extends Application {
 
 		layout7.getChildren().addAll(confirm, confirmNext);
 		layout7.setAlignment(Pos.CENTER);
-		scene7 = new Scene(layout7, 320, 480);
+		scene7 = new Scene(layout7, 420, 600);
 
 		// Scene 8
 
@@ -286,7 +286,7 @@ public class Display extends Application {
 
 		layout8.getChildren().addAll(finalMessage, buttonReturn);
 		layout8.setAlignment(Pos.CENTER);
-		scene8 = new Scene(layout8, 320, 480);
+		scene8 = new Scene(layout8, 420, 600);
 
 		// Server scene 1
 
@@ -313,7 +313,7 @@ public class Display extends Application {
 		server1ID.setAlignment(Pos.CENTER);
 		server1Pass.setAlignment(Pos.CENTER);
 		serverlayout1.setAlignment(Pos.CENTER);
-		server1 = new Scene(serverlayout1, 320, 480);
+		server1 = new Scene(serverlayout1, 420, 600);
 
 		// Server scene 2
 
@@ -336,7 +336,7 @@ public class Display extends Application {
 		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, Complete);
 		orderBox.setAlignment(Pos.CENTER);
 		serverlayout2.setAlignment(Pos.CENTER);
-		server2 = new Scene(serverlayout2, 320, 480);
+		server2 = new Scene(serverlayout2, 420, 600);
 
 	}
 
