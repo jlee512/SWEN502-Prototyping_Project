@@ -11,6 +11,7 @@ import Controller.NonExistentUserException;
 import Controller.Order;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
@@ -32,7 +33,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class Display extends Application {
 
-	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2;
+	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2, server3, server4;
 	ArrayList<String> order_ingredients = new ArrayList<>();
 	String customer_name = "";
 	int phone_number = -1;
@@ -313,7 +314,7 @@ public class Display extends Application {
 		loginButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		Label noaccess = new Label();
-		
+
 		loginButton.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				int userID = Integer.parseInt(serverIDIn.getText());
@@ -322,6 +323,8 @@ public class Display extends Application {
 				try {
 					if (Employee.validateUser(userID, password)) {
 						System.out.println("Employee #" + userID + " credentials verified");
+						primaryStage.setScene(server2);
+						
 					} else {
 						System.out.println("Employee credentials could not be verified");
 					}
@@ -352,33 +355,100 @@ public class Display extends Application {
 		Text orderHeader = new Text("Orders:");
 		orderHeader.setFont(Font.font ("Helvetica", 25));
 		orderHeader.setFill(Color.web("#ee0000"));		
-		HBox orderBox = new HBox(20);
+		HBox orderBox = new HBox(10);
 
-		Text orderText = new Text("Order text");
-		Button completeOrder = new Button("Complete");
-		completeOrder.setOnAction(e -> primaryStage.setScene(server2));
-		completeOrder.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		
 		Button Restock = new Button("Restock");
 		Restock.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		Button Complete = new Button("Complete");
-		Complete.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-
-		orderBox.getChildren().addAll(orderText, completeOrder);
-		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, Complete);
-		orderBox.setAlignment(Pos.CENTER);
+		Restock.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				primaryStage.setScene(server4);
+			}
+		});
+		
+		Button getToDoList = new Button("Get To Do List");
+		getToDoList.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		getToDoList.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				primaryStage.setScene(server3);
+			}
+		});
+		
+		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, getToDoList);
+		orderBox.setAlignment(Pos.TOP_CENTER);
 		serverlayout2.setAlignment(Pos.CENTER);
 		server2 = new Scene(serverlayout2, 420, 600);
+		
+		
+		//Server scene 3 - Assign & complete orders 
+		
+		VBox serverlayout3 = new VBox(25);
+		VBox serverlayoutInner3 = new VBox(200);
+		serverlayout3.setStyle("-fx-background-color: #eeeeee");
+		
+		Button assign_order = new Button("Assign Order");
+		assign_order.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		getToDoList.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				//Need to get the list of unassigned orders
+				ChoiceBox torestock = new ChoiceBox(FXCollections.observableArrayList(Order.getAllOpenOrders()));
+				//Print out order list (drop down menu)
+				//Select order #
+				//Assign to employee 
+			}
+		});
+		
+		Button completeOrder = new Button("Complete Order");
+		completeOrder.setOnAction(e -> primaryStage.setScene(server2));
+		completeOrder.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		completeOrder.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				//Get the list of orders assigned
+				//Select out of list an order
+				//Order number
+				//Call method to complete
+			}
+		});
+		
+		serverlayout3.getChildren().addAll(assign_order, completeOrder);
+		serverlayout3.getChildren().addAll(serverlayoutInner3);
+		serverlayout3.setAlignment(Pos.CENTER);
+		serverlayoutInner3.setAlignment(Pos.CENTER);
+		server3 = new Scene(serverlayout3, 420, 600);
+		
+		//Server scene 4 - Restocking
+	
+		/**Display the list of ingredients in checkboxes
+		Select ingredient to restock
+		Confirm restock -- connect to the restock item method*/
+		
+		VBox serverlayout4 = new VBox(25);
+		VBox serverlayoutInner = new VBox(200);
+		serverlayout4.setStyle("-fx-background-color: #eeeeee");
+				
+		ObservableList<String> restockIngredients = FXCollections.observableArrayList(Ingredient.getRestockIngredients());
+		ChoiceBox torestock = new ChoiceBox();
+		torestock.setItems(restockIngredients);
+		
+		Button confirm_restock = new Button("Restock Item");
+		confirm_restock.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				String restock_ingredient = torestock.getValue().toString();
+				Ingredient.restock(restock_ingredient);
+				torestock.setItems(FXCollections.observableArrayList(Ingredient.getRestockIngredients()));
+				primaryStage.setScene(server2);
+			}
+		});
+		
+		confirm_restock.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		serverlayout4.getChildren().addAll(torestock, confirm_restock);
+		serverlayout4.getChildren().addAll(serverlayoutInner);
+		serverlayout4.setAlignment(Pos.CENTER);
+		serverlayoutInner.setAlignment(Pos.CENTER);
+		server4 = new Scene(serverlayout4, 420, 600);
 
 	}
 
-	private Object ButtonClicked(ActionEvent e) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	private void notifier(String string, String string2) {
-		// TODO Auto-generated method stub
-
-	}
 	public static void main(String[] args) {
 		launch(args);
 	}
