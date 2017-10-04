@@ -113,6 +113,8 @@ public class Backend_BurgerCoApp {
         for (int i = 0; i < sauces.size(); i++) {
             System.out.println(sauces.get(i));
         }
+
+        Ingredient.reduceStock("Onion");
     }
 
     public void addUsersToDB() {

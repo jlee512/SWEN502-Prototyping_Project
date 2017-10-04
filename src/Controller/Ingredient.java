@@ -23,7 +23,28 @@ public class Ingredient {
 	
 	public static void reduceStock(String ingredientName){
 		//Remove the stock items from the database
+		//Create database connection
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
 
+		int stock_level = Ingredient.getStockLevel(ingredientName);
+
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("UPDATE Ingredient SET quantity = ? WHERE ingredient_name = ?;")) {
+				stmt.setInt(1, (stock_level - 1));
+				stmt.setString(2, ingredientName);
+
+				stmt.executeUpdate();
+				System.out.println(ingredientName + " stock level reduced");
+
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static int getStockLevel(String ingredientName) {
