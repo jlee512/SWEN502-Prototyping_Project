@@ -9,11 +9,11 @@ INSERT INTO Ingredient(ingredient_type, ingredient_name, unit_price, quantity) V
   (1, "Lettuce", 0.4, 5),
   (1, "Tomato", 1.0, 5),
   (1, "Onion", 0.2, 5),
-  (1, "Beetroot", 0.5, 5),
+  (1, "Beetroot", 0.5, 4),
   (1, "Cheese", 1.0, 5);
 -- Bun
 INSERT INTO Ingredient(ingredient_type, ingredient_name, unit_price, quantity) VALUES
-  (2, "White bread", 1.0, 5),
+  (2, "White bread", 1.0, 0),
   (2, "Multigrain bread", 1.50, 5),
   (2, "Glutenfree bread", 2.00, 5),
   (2, "Lettuce", 1.0, 5);

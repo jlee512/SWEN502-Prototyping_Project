@@ -6,6 +6,7 @@ package GUI;
 
 import java.awt.Insets;
 import java.io.UnsupportedEncodingException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 import Controller.BadPasswordException;
@@ -371,7 +372,9 @@ public class Display extends Application {
 				//System.out.println(phone_number);
 
 				double total_price = Order.createOrder(customer_name, phone_number, order_ingredients);
-				order_price = "$" + total_price + "0";
+				DecimalFormat df = new DecimalFormat();
+				df.setMaximumFractionDigits(1);
+				order_price = "$" + df.format(total_price) + "0";
 
 				// Scene 8
 
