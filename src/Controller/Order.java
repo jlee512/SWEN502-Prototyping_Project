@@ -147,17 +147,6 @@ public class Order {
         return orderid;
     }
 
-
-    //
-    public static Order getOrder() {
-        //get Order
-        return null;
-    }
-
-    public void completeOrder() {
-        //Complete the order and remove ingredients from the database
-    }
-
     //Get all open orders which are not yet assigned a staff member
     public static ArrayList<Order> getAllOpenOrders() {
 

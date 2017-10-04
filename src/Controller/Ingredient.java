@@ -167,7 +167,6 @@ public class Ingredient {
 					}
 					return burgers;
 				}
-
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
