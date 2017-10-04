@@ -157,7 +157,7 @@ public class Employee {
                             order.addIngredient(r.getString("ingredient_name"));
                             order_num ++;
                         // Process subsequent orders
-                        } else if (r.getInt("order_id") != order.getOrderID()) {
+                        } else if (r.getInt("order_id") != order.getID()) {
                             orders.add(order);
                             order = new Order(r.getInt("order_id"));
 //                            System.out.println("New order " + order.getOrderID());
