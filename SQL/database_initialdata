@@ -25,9 +25,9 @@ INSERT INTO Ingredient(ingredient_type, ingredient_name, unit_price, quantity) V
   (3, "Lamb", 4.0, 5);
 -- Sauce
 INSERT INTO Ingredient(ingredient_type, ingredient_name, unit_price, quantity) VALUES
-  (4, "Aioli", 0.25, 5),
-  (4, "Tomato Sauce", 0.25, 5),
-  (4, "Mayonaise", 0.25, 5),
+  (4, "Aioli", 0.20, 5),
+  (4, "Tomato Sauce", 0.20, 5),
+  (4, "Mayonaise", 0.20, 5),
   (4, "Mustard", 0.5, 5),
   (4, "Mint", 0.5, 3);
 

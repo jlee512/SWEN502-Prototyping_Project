@@ -41,6 +41,7 @@ public class Display extends Application {
 	String password = "";
 	int screen_width = 850;
 	int screen_height = 600;
+	String order_price = "";
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -77,10 +78,19 @@ public class Display extends Application {
 		selectBurger.setFill(Color.web("#ee0000"));		
 
 		VBox layout2 = new VBox(75);
+
+		ArrayList<String> burger_name_list = Ingredient.getAllBurgers();
+		ArrayList<Double> burger_prices = Ingredient.getAllBurgerPrices();
+		ArrayList<String> burgerAndPrice = new ArrayList<>();
+
+		for (int i = 0; i < burger_name_list.size(); i++) {
+			burgerAndPrice.add("" + burger_name_list.get(i) + " $" + burger_prices.get(i) + "0");
+		}
 		
-		ObservableList<String> burger_list = FXCollections.observableArrayList(Ingredient.getAllBurgers());
+		ObservableList<String> burger_list = FXCollections.observableArrayList(burgerAndPrice);
 		ChoiceBox burger = new ChoiceBox();
 		burger.setItems(burger_list);
+		burger.getSelectionModel().selectFirst();
 
 		Button meatNext = new Button("Next");
 		meatNext.setOnAction(e -> primaryStage.setScene(scene3));
@@ -100,9 +110,19 @@ public class Display extends Application {
 		selectBun.setFill(Color.web("#ee0000"));		
 
 		VBox layout3 = new VBox(75);
-		ObservableList<String> bun_list = FXCollections.observableArrayList(Ingredient.getAllBreads());
+
+		ArrayList<String> bun_name_list = Ingredient.getAllBreads();
+		ArrayList<Double> bun_price_list = Ingredient.getAllBreadPrices();
+		ArrayList<String> bunAndPrice = new ArrayList<>();
+
+		for (int i = 0; i < bun_name_list.size(); i++) {
+			bunAndPrice.add("" + bun_name_list.get(i) + " $" + bun_price_list.get(i) + "0");
+		}
+
+		ObservableList<String> bun_list = FXCollections.observableArrayList(bunAndPrice);
 		ChoiceBox bun = new ChoiceBox();
 		bun.setItems(bun_list);
+		bun.getSelectionModel().selectFirst();
 
 		Button bunNext = new Button("Next");
 		bunNext.setOnAction(e -> primaryStage.setScene(scene4));
@@ -123,9 +143,11 @@ public class Display extends Application {
 		HBox layout4Inner = new HBox(20);
 
 		ArrayList<String> fillings = Ingredient.getAllFillings();
+		ArrayList<Double> fillings_price = Ingredient.getAllFillingPrices();
+
 		ArrayList<CheckBox> filling_checkboxes = new ArrayList<>();
 		for (int i = 0; i < fillings.size(); i++) {
-			CheckBox filling = new CheckBox(fillings.get(i));
+			CheckBox filling = new CheckBox("" + fillings.get(i) + " $" + fillings_price.get(i) + "0");
 			if (i == 0) {
 				filling.setSelected(true);
 			}
@@ -159,9 +181,10 @@ public class Display extends Application {
 		HBox layout5Inner = new HBox(20);
 
 		ArrayList<String> sauces = Ingredient.getAllSauces();
+		ArrayList<Double> sauce_price = Ingredient.getAllSaucePrices();
 		ArrayList<CheckBox> sauces_checkboxes = new ArrayList<>();
 		for (int i = 0; i < sauces.size(); i++) {
-			CheckBox sauce = new CheckBox(sauces.get(i));
+			CheckBox sauce = new CheckBox(sauces.get(i) + " $" + sauce_price.get(i) + "0");
 			if (i == 0) {
 				sauce.setSelected(true);
 			}
@@ -209,7 +232,12 @@ public class Display extends Application {
 		Button detailsNext = new Button("Next");
 		detailsNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				primaryStage.setScene(scene7);
+				if (userNameIn.getText().isEmpty() || userPhoneIn.getText().isEmpty()) {
+					Label missing_details = new Label("Order details missing");
+					layout6.getChildren().add(missing_details);
+				} else {
+					primaryStage.setScene(scene7);
+				}
 			}
 		}    
 				);
@@ -238,13 +266,19 @@ public class Display extends Application {
 			@Override public void handle(ActionEvent e) {
 
 				//				System.out.println("Burger");
-				String burger_ordered = burger.getValue().toString();
+				String burger_ordered = burger.getValue().toString().substring(0, burger.getValue().toString().indexOf(" "));
+				System.out.println(burger.getValue().toString());
 				order_ingredients.add(burger_ordered);
 				burger.setItems(FXCollections.observableArrayList(Ingredient.getAllBurgers()));
 				//				System.out.println(burger_ordered);
 
 				//				System.out.println("Bun");
-				String bun_ordered = bun.getValue().toString();
+				String bun_ordered = "";
+				if (bun.getValue().toString().startsWith("L")) {
+					bun_ordered = bun.getValue().toString().substring(0, bun.getValue().toString().indexOf(" "));
+				} else {
+					bun_ordered = bun.getValue().toString().substring(0, bun.getValue().toString().indexOf(" ", bun.getValue().toString().indexOf(" ") + 1));
+				}
 				order_ingredients.add(bun_ordered);
 				bun.setItems(FXCollections.observableArrayList(Ingredient.getAllBreads()));
 				//				System.out.println(burger_ordered);
@@ -292,7 +326,7 @@ public class Display extends Application {
 
 		Text finalMessage = new Text("Thank you, your order has been processed");
 		finalMessage.setFont(Font.font ("Helvetica", 20));
-		finalMessage.setFill(Color.web("#ee0000"));		
+		finalMessage.setFill(Color.web("#ee0000"));
 
 		VBox layout8 = new VBox(75);
 
@@ -539,5 +573,6 @@ public class Display extends Application {
 	public static void main(String[] args) {
 		launch(args);
 	}
+
 }
 

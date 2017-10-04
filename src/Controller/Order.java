@@ -203,7 +203,8 @@ public class Order {
     	double totalprice = 5.00;
     	for (int i = 0; i < ingredients.size(); i++){
     		totalprice += Ingredient.getIngredientPrice(ingredients.get(i));
-    	}
+            System.out.println(totalprice);
+        }
     	return totalprice;
     }
 }

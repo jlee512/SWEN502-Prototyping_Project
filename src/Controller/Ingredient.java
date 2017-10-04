@@ -351,6 +351,7 @@ public class Ingredient {
 
 				try (ResultSet r = stmt.executeQuery()) {
 					while (r.next()) {
+						System.out.println(r.getDouble("unit_price"));
 						return r.getDouble("unit_price");
 					}
 				}
