@@ -248,4 +248,95 @@ public class Ingredient {
 		return null;
 	}
 
+	public static ArrayList<Double> getAllBurgerPrices(){
+		//Loop through the array list of all burgers
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.unit_price FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Meat' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<Double> burgers_prices = new ArrayList<>();
+					while (r.next()) {
+						burgers_prices.add(r.getDouble("unit_price"));
+					}
+					return burgers_prices;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<Double> getAllBreadPrices(){
+		//Loop through the array list of all burgers
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.unit_price FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Bun' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<Double> bread_prices = new ArrayList<>();
+					while (r.next()) {
+						bread_prices.add(r.getDouble("unit_price"));
+					}
+					return bread_prices;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<Double> getAllFillingPrices(){
+		//Loop through the array list of all burgers
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.unit_price FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Filling' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<Double> filling_prices = new ArrayList<>();
+					while (r.next()) {
+						filling_prices.add(r.getDouble("unit_price"));
+					}
+					return filling_prices;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static ArrayList<Double> getAllSaucePrices(){
+		//Loop through the array list of all burgers
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.unit_price FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Sauce' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<Double> sauce_prices = new ArrayList<>();
+					while (r.next()) {
+						sauce_prices.add(r.getDouble("unit_price"));
+					}
+					return sauce_prices;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }

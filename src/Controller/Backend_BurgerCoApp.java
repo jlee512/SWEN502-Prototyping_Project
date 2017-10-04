@@ -87,11 +87,12 @@ public class Backend_BurgerCoApp {
         System.out.println("Ingredient_id for: Chicken is -> " + Ingredient.getIngredientID("Chicken"));
 
         //Test order addition
-//        ArrayList<String> ingredients = new ArrayList<>();
-//        ingredients.add("White bread");
-//        ingredients.add("Lamb");
-//        ingredients.add("Mint");
+        ArrayList<String> ingredients = new ArrayList<>();
+        ingredients.add("White bread");
+        ingredients.add("Lamb");
+        ingredients.add("Mint");
 //        Order.createOrder("Julian", 123, ingredients);
+        Order.createOrder("Maddy", 12345, ingredients);
 
         // Test all ingredients of particular types
         ArrayList<String> burgers = Ingredient.getAllBurgers();
