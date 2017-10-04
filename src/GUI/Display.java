@@ -204,8 +204,8 @@ public class Display extends Application {
 
 		Text userPhone = new Text("Phone:");
 		TextField userPhoneIn = new TextField();
-		userPhoneIn.getText();
-		//System.out.println(userPhoneIn);
+		String phone = userPhoneIn.getText();
+		System.out.println(phone);
 
 		Button detailsNext = new Button("Next");
 		detailsNext.setOnAction(e -> primaryStage.setScene(scene7));
