@@ -61,7 +61,7 @@ public class Display extends Application {
 		VBox layout1Inner = new VBox(200);
 		orderButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 		serverButton.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		layout1.setStyle("-fx-background-color: #eeeeee");
+		layout1.setStyle("-fx-background-color: #8ce2ff");
 		layout1Inner.getChildren().addAll(orderButton, serverButton);
 		layout1.getChildren().addAll(title, layout1Inner);
 		layout1.setAlignment(Pos.CENTER);
@@ -78,7 +78,8 @@ public class Display extends Application {
 		selectBurger.setFill(Color.web("#ee0000"));		
 
 		VBox layout2 = new VBox(75);
-
+		layout2.setStyle("-fx-background-color: #8ce2ff");
+		
 		ArrayList<String> burger_name_list = Ingredient.getAllBurgers();
 		ArrayList<Double> burger_prices = Ingredient.getAllBurgerPrices();
 		ArrayList<String> burgerAndPrice = new ArrayList<>();
@@ -131,6 +132,7 @@ public class Display extends Application {
 
 		layout3.getChildren().addAll(selectBun, bun, bunNext);
 		layout3.setAlignment(Pos.CENTER);
+		layout3.setStyle("-fx-background-color: #8ce2ff");
 		scene3 = new Scene(layout3, screen_width, screen_height);
 
 		// Scene 4
@@ -168,6 +170,7 @@ public class Display extends Application {
 
 		layout4.getChildren().addAll(selectSalad,layout4Inner,saladNext);
 		layout4.setAlignment(Pos.CENTER);
+		layout4.setStyle("-fx-background-color: #8ce2ff");
 		layout4Inner.setAlignment(Pos.CENTER);
 		scene4 = new Scene(layout4, screen_width, screen_height);
 
@@ -208,6 +211,7 @@ public class Display extends Application {
 		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext);
 		layout5.setAlignment(Pos.CENTER);
 		layout5Inner.setAlignment(Pos.CENTER);
+		layout5.setStyle("-fx-background-color: #8ce2ff");
 		scene5 = new Scene(layout5, screen_width, screen_height);
 
 		// Scene 6
@@ -249,6 +253,7 @@ public class Display extends Application {
 		layout6User.setAlignment(Pos.CENTER);
 		layout6Pass.setAlignment(Pos.CENTER);
 		layout6.setAlignment(Pos.CENTER);
+		layout6.setStyle("-fx-background-color: #8ce2ff");
 		scene6 = new Scene(layout6, screen_width, screen_height);
 
 		// Scene 7
@@ -259,6 +264,7 @@ public class Display extends Application {
 		confirm.setFill(Color.web("#ee0000"));		
 
 		VBox layout7 = new VBox(75);
+		layout7.setStyle("-fx-background-color: #8ce2ff");
 
 		Button confirmNext = new Button("Next");
 
@@ -320,6 +326,7 @@ public class Display extends Application {
 				totalPrice.setFill(Color.web("#ee0000"));
 
 				VBox layout8 = new VBox(75);
+				layout8.setStyle("-fx-background-color: #8ce2ff");
 
 				Button buttonReturn = new Button("Return");
 				buttonReturn.setOnAction(e1 -> primaryStage.setScene(scene1));
@@ -341,6 +348,7 @@ public class Display extends Application {
 
 		layout7.getChildren().addAll(confirm, confirmNext);
 		layout7.setAlignment(Pos.CENTER);
+		layout7.setStyle("-fx-background-color: #8ce2ff");
 		scene7 = new Scene(layout7, screen_width, screen_height);
 
 		//Staff side of the display
@@ -480,6 +488,7 @@ public class Display extends Application {
 						serverlayout3.getChildren().addAll(unfilled_order_list, assign_order, employee_order_list, completeOrder);
 						serverlayout3.getChildren().add(serverlayoutInner3);
 						serverlayout3.setAlignment(Pos.CENTER);
+						serverlayout3.setStyle("-fx-background-color: #8ce2ff");
 						serverlayoutInner3.setAlignment(Pos.CENTER);
 						server3 = new Scene(serverlayout3, screen_width, screen_height);
 						primaryStage.setScene(server2);
@@ -490,7 +499,7 @@ public class Display extends Application {
 						
 						VBox serverlayout4 = new VBox(25);
 						VBox serverlayoutInner = new VBox(200);
-						serverlayout4.setStyle("-fx-background-color: #eeeeee");
+						serverlayout4.setStyle("-fx-background-color: #8ce2ff");
 								
 						ObservableList<String> restockIngredients = FXCollections.observableArrayList(Ingredient.getRestockIngredients());
 						ChoiceBox torestock = new ChoiceBox();
@@ -512,6 +521,7 @@ public class Display extends Application {
 						serverlayout4.getChildren().addAll(serverlayoutInner);
 						serverlayout4.setAlignment(Pos.CENTER);
 						serverlayoutInner.setAlignment(Pos.CENTER);
+						serverlayout4.setStyle("-fx-background-color: #8ce2ff");
 						server4 = new Scene(serverlayout4, screen_width, screen_height);
 						
 					} else {
@@ -535,6 +545,7 @@ public class Display extends Application {
 		server1ID.setAlignment(Pos.CENTER);
 		server1Pass.setAlignment(Pos.CENTER);
 		serverlayout1.setAlignment(Pos.CENTER);
+		serverlayout1.setStyle("-fx-background-color: #8ce2ff");
 		serverVBox.setAlignment(Pos.CENTER);
 		server1 = new Scene(serverlayout1, screen_width, screen_height);
 
@@ -565,6 +576,8 @@ public class Display extends Application {
 		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, getToDoList);
 		orderBox.setAlignment(Pos.TOP_CENTER);
 		serverlayout2.setAlignment(Pos.CENTER);
+		serverlayout2.setStyle("-fx-background-color: #8ce2ff");
+
 		server2 = new Scene(serverlayout2, screen_width, screen_height);
 		
 		
