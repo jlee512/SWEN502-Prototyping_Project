@@ -273,7 +273,7 @@ public class Display extends Application {
 
 		// Scene 8
 
-		Text finalMessage = new Text("Your order has been processed");
+		Text finalMessage = new Text("Thank you, your order has been processed");
 		finalMessage.setFont(Font.font ("Helvetica", 20));
 		finalMessage.setFill(Color.web("#ee0000"));		
 
