@@ -1,5 +1,9 @@
 package GUI;
 
+/**
+ * @author Jack Humphrey, Gurtej Singh, Julian Lees, Madeleine St-Laurent-Guerin
+ */
+
 import java.awt.Insets;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
