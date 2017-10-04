@@ -61,10 +61,11 @@ public class Order {
         return ingredients;
     }
 
-    public static void createOrder(String custname, int custphone, ArrayList<String> ingredients) {
+    public static double createOrder(String custname, int custphone, ArrayList<String> ingredients) {
         //Create the order based on the input received from the GUI and add to DB
         //Will need to connect to the database
         //Insert into order list and into burger component list
+        double total_price = -1.0;
         File database_file = new File("Burger.sqlite");
         LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
         try (Connection c = db.connection()) {
@@ -78,7 +79,7 @@ public class Order {
                 stmt.setString(3, strDate);
                 stmt.executeUpdate();
 
-                double total_price = Order.calculateTotalPrice(ingredients);
+                total_price = Order.calculateTotalPrice(ingredients);
 
                 System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added, Total Price: " + total_price);
             } catch (SQLException e) {
@@ -90,8 +91,8 @@ public class Order {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-
         Order.createBurgerComponents(Order.getOrderID(custname), ingredients);
+        return total_price;
     }
 
     //Create the new burger component records

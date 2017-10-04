@@ -304,10 +304,31 @@ public class Display extends Application {
 
 				customer_name = userNameIn.getText();
 				phone_number = Integer.parseInt(userPhoneIn.getText());
-				//				System.out.println(customer_name);
-				//				System.out.println(phone_number);	
+				//System.out.println(customer_name);
+				//System.out.println(phone_number);
 
-				Order.createOrder(customer_name, phone_number, order_ingredients);
+				double total_price = Order.createOrder(customer_name, phone_number, order_ingredients);
+				order_price = "$" + total_price + "0";
+
+				// Scene 8
+
+				Text finalMessage = new Text("Thank you, your order has been processed");
+				Text totalPrice = new Text(order_price);
+				finalMessage.setFont(Font.font ("Helvetica", 20));
+				finalMessage.setFill(Color.web("#ee0000"));
+				totalPrice.setFont(Font.font ("Helvetica", 20));
+				totalPrice.setFill(Color.web("#ee0000"));
+
+				VBox layout8 = new VBox(75);
+
+				Button buttonReturn = new Button("Return");
+				buttonReturn.setOnAction(e1 -> primaryStage.setScene(scene1));
+
+				buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
+				layout8.getChildren().addAll(finalMessage, totalPrice, buttonReturn);
+				layout8.setAlignment(Pos.CENTER);
+				scene8 = new Scene(layout8, screen_width, screen_height);
 
 				primaryStage.setScene(scene8);
 			}
@@ -321,23 +342,6 @@ public class Display extends Application {
 		layout7.getChildren().addAll(confirm, confirmNext);
 		layout7.setAlignment(Pos.CENTER);
 		scene7 = new Scene(layout7, screen_width, screen_height);
-
-		// Scene 8
-
-		Text finalMessage = new Text("Thank you, your order has been processed");
-		finalMessage.setFont(Font.font ("Helvetica", 20));
-		finalMessage.setFill(Color.web("#ee0000"));
-
-		VBox layout8 = new VBox(75);
-
-		Button buttonReturn = new Button("Return");
-		buttonReturn.setOnAction(e -> primaryStage.setScene(scene1));
-
-		buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-
-		layout8.getChildren().addAll(finalMessage, buttonReturn);
-		layout8.setAlignment(Pos.CENTER);
-		scene8 = new Scene(layout8, screen_width, screen_height);
 
 		//Staff side of the display
 		// Server scene 1
