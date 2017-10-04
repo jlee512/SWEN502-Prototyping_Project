@@ -449,12 +449,17 @@ public class Display extends Application {
 						
 						Employee employee = Employee.getUserDB(user_id);
 						ArrayList<Order> employee_orders = employee.getUserToDoList();
-						ArrayList<Integer> employee_orders_ints = new ArrayList<>();
+						ArrayList<String> employee_orders_strings = new ArrayList<>();
 						for(int i = 0; i < employee_orders.size(); i++) {
-							employee_orders_ints.add(employee_orders.get(i).getID());
+							ArrayList<String> employee_orders_ingredients = employee_orders.get(i).getIngredients();
+							String employee_order_string = "" + employee_orders.get(i).getID() + " ";
+							for (int j = 0; j < employee_orders_ingredients.size(); j++) {
+								employee_order_string += "|" + employee_orders_ingredients.get(j);
+							}
+							employee_orders_strings.add(employee_order_string);
 						}
 						
-						ObservableList<Integer> employee_orders_observable = FXCollections.observableArrayList(employee_orders_ints);
+						ObservableList<String> employee_orders_observable = FXCollections.observableArrayList(employee_orders_strings);
 						ChoiceBox employee_order_list = new ChoiceBox();
 						employee_order_list.setItems(employee_orders_observable);
 						
@@ -492,12 +497,18 @@ public class Display extends Application {
 								unfilled_order_list.setItems(FXCollections.observableArrayList(unfilled_orders_ints));
 								
 								ArrayList<Order> employee_orders = employee.getUserToDoList();
-								ArrayList<Integer> employee_orders_ints = new ArrayList<>();
+								ArrayList<String> employee_orders_strings = new ArrayList<>();
 								for(int i = 0; i < employee_orders.size(); i++) {
-									employee_orders_ints.add(employee_orders.get(i).getID());
+									ArrayList<String> employee_orders_ingredients = employee_orders.get(i).getIngredients();
+									String employee_order_string = "" + employee_orders.get(i).getID() + " ";
+									for (int j = 0; j < employee_orders_ingredients.size(); j++) {
+										employee_order_string += "|" + employee_orders_ingredients.get(j);
+									}
+									employee_orders_strings.add(employee_order_string);
+									System.out.println(employee_order_string);
 								}
 								
-								employee_order_list.setItems(FXCollections.observableArrayList(employee_orders_ints));
+								employee_order_list.setItems(FXCollections.observableArrayList(employee_orders_strings));
 								
 								primaryStage.setScene(server2);
 								
@@ -518,20 +529,24 @@ public class Display extends Application {
 									// TODO Auto-generated catch block
 									e1.printStackTrace();
 								}
-								int order_completed_id = (int) employee_order_list.getValue();
+								int order_completed_id = Integer.parseInt(employee_order_list.getValue().toString().substring(0, employee_order_list.getValue().toString().indexOf(" ")));
 								//Print out order list (drop down menu)
 								//Select order #
 								//Assign to employee 
 								employee.completeOrder(order_completed_id);
-								
+
 								ArrayList<Order> employee_orders = employee.getUserToDoList();
-								ArrayList<Integer> employee_orders_ints = new ArrayList<>();
+								ArrayList<String> employee_orders_strings = new ArrayList<>();
 								for(int i = 0; i < employee_orders.size(); i++) {
-									employee_orders_ints.add(employee_orders.get(i).getID());
-									System.out.println(employee_orders.get(i).getID());
+									ArrayList<String> employee_orders_ingredients = employee_orders.get(i).getIngredients();
+									String employee_order_string = "" + employee_orders.get(i).getID() + " ";
+									for (int j = 0; j < employee_orders_ingredients.size(); j++) {
+										employee_order_string += "|" + employee_orders_ingredients.get(j);
+									}
+									employee_orders_strings.add(employee_order_string);
 								}
 								
-								employee_order_list.setItems(FXCollections.observableArrayList(employee_orders_ints));
+								employee_order_list.setItems(FXCollections.observableArrayList(employee_orders_strings));
 								primaryStage.setScene(server2);
 							}
 						});
