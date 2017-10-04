@@ -25,6 +25,8 @@ import javafx.stage.Stage;
 public class Display extends Application {
 
 	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2;
+	
+	String name, phone;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -117,7 +119,6 @@ public class Display extends Application {
 					System.out.println("Lettuce is selected");
 				}
 				if (salad2.isSelected())
-					
 				{
 					System.out.println("Tomatoes is selected");
 				}
@@ -157,7 +158,6 @@ public class Display extends Application {
 		sauceNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 
-				
 				System.out.println("Sauces:");
 				if (sauce1.isSelected())
 				{
@@ -174,9 +174,11 @@ public class Display extends Application {
 				primaryStage.setScene(scene6);
 				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
 			}
-			
+
 		}    
 				);
+		
+		
 
 		sauceNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
@@ -189,42 +191,46 @@ public class Display extends Application {
 		// Scene 6
 
 
-        Text enterDetails = new Text("Enter your details:");
-        enterDetails.setFont(Font.font ("Helvetica", 25));
-        enterDetails.setFill(Color.web("#ee0000"));        
-        VBox layout6 = new VBox(75);
-        VBox detailVBox = new VBox(20);
-        HBox layout6User = new HBox(20);
-        HBox layout6Pass = new HBox(20);
-        Text userName = new Text("Name:");
-        TextField userNameIn = new TextField();
-        String name = userNameIn.getText();
-        Text userPhone = new Text("Phone:");
-        TextField userPhoneIn = new TextField();
-        String phone = userPhoneIn.getText();
-        Button detailsNext = new Button("Next");
-        detailsNext.setOnAction(new EventHandler<ActionEvent>() {
-            @Override public void handle(ActionEvent e) {
-                System.out.println(name);
-                System.out.println(phone);
-                primaryStage.setScene(scene7);
-            }
-        }    
-                );
-        detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-        layout6User.getChildren().addAll(userName, userNameIn);
-        layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
-        detailVBox.getChildren().addAll(layout6User, layout6Pass);
-        layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
-        layout6User.setAlignment(Pos.CENTER);
-        layout6Pass.setAlignment(Pos.CENTER);
-        layout6.setAlignment(Pos.CENTER);
-        scene6 = new Scene(layout6, 320, 480);
+		Text enterDetails = new Text("Enter your details:");
+		enterDetails.setFont(Font.font ("Helvetica", 25));
+		enterDetails.setFill(Color.web("#ee0000"));   
+		
+		VBox layout6 = new VBox(75);
+		VBox detailVBox = new VBox(20);
+		HBox layout6User = new HBox(20);
+		HBox layout6Pass = new HBox(20);
+		
+		Text userName = new Text("Name:");
+		TextField userNameIn = new TextField();
+		
+		Text userPhone = new Text("Phone:");
+		TextField userPhoneIn = new TextField();
+		
+		Button detailsNext = new Button("Next");
+		detailsNext.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				String name = userNameIn.getText();
+				String phone = userPhoneIn.getText();
+				System.out.println(name);
+				System.out.println(phone);
+				primaryStage.setScene(scene7);
+			}
+		}    
+				);
+		detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		layout6User.getChildren().addAll(userName, userNameIn);
+		layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
+		detailVBox.getChildren().addAll(layout6User, layout6Pass);
+		layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
+		layout6User.setAlignment(Pos.CENTER);
+		layout6Pass.setAlignment(Pos.CENTER);
+		layout6.setAlignment(Pos.CENTER);
+		scene6 = new Scene(layout6, 320, 480);
 
 		// Scene 7
 
 		Text confirm = new Text("Confirm your order:");
-		
+
 		confirm.setFont(Font.font ("Helvetica", 25));
 		confirm.setFill(Color.web("#ee0000"));		
 
@@ -282,15 +288,15 @@ public class Display extends Application {
 		server1Pass.setAlignment(Pos.CENTER);
 		serverlayout1.setAlignment(Pos.CENTER);
 		server1 = new Scene(serverlayout1, 320, 480);
-		
+
 		// Server scene 2
-		
+
 		VBox serverlayout2 = new VBox(75);
 		Text orderHeader = new Text("Orders:");
 		orderHeader.setFont(Font.font ("Helvetica", 25));
 		orderHeader.setFill(Color.web("#ee0000"));		
 		HBox orderBox = new HBox(20);
-		
+
 		Text orderText = new Text("Order text");
 		Button completeOrder = new Button("Complete");
 		completeOrder.setOnAction(e -> primaryStage.setScene(server2));
@@ -299,7 +305,7 @@ public class Display extends Application {
 		Restock.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 		Button Complete = new Button("Complete");
 		Complete.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		
+
 		orderBox.getChildren().addAll(orderText, completeOrder);
 		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, Complete);
 		orderBox.setAlignment(Pos.CENTER);
