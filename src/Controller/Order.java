@@ -194,4 +194,13 @@ public class Order {
         }
         return null;
     }
+    
+    public static double calculateTotalPrice(ArrayList<String> ingredients){
+  
+    	double totalprice = 5.00;
+    	for (int i = 0; i < ingredients.size(); i++){
+    		totalprice += Ingredient.getIngredientPrice(ingredients.get(i));
+    	}
+    	return totalprice;
+    }
 }
