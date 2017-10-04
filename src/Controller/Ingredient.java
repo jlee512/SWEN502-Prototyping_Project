@@ -134,6 +134,21 @@ public class Ingredient {
 	
 	public static ArrayList<String> getAllBurgers(){
 		//Loop through the array list of all burgers
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.ingredient_name FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Meat';")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+
+				}
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 

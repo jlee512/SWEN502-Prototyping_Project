@@ -23,7 +23,7 @@ public class Order {
 		this.ingredients = new ArrayList<>();
 	}
 
-	public int getOrderID() {
+	public int getID() {
 		return orderID;
 	}
 
@@ -55,7 +55,7 @@ public class Order {
 		return ingredients;
 	}
 
-	public static void createOrder(String custname, int custphone){
+	public static void createOrder(String custname, int custphone, ArrayList<String> ingredients){
 		//Create the order based on the input received from the GUI and add to DB
 		//Will need to connect to the database
 		//Insert into order list and into burger component list
@@ -77,9 +77,11 @@ public class Order {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
+
+		Order.createBurgerComponents(Order.getOrderID(custname), ingredients);
 	}
 	
-	public void createBurgerComponents(int orderID, ArrayList<String> inputingredients){
+	public static void createBurgerComponents(int orderID, ArrayList<String> inputingredients){
 		// Loop over the array list to get ingredients
 		// Get ingredient ID --> Call that method
 		// Add them to the database with the order ID
@@ -172,7 +174,7 @@ public class Order {
 							order.setTimestamp(r.getString("timestamp"));
 							order_num ++;
 							// Process subsequent orders
-						} else if (r.getInt("order_id") != order.getOrderID()) {
+						} else if (r.getInt("order_id") != order.getID()) {
 							orders.add(order);
 							order = new Order(r.getInt("order_id"));
 							//                            System.out.println("New order " + order.getOrderID());
