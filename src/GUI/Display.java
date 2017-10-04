@@ -27,6 +27,7 @@ import javafx.stage.Stage;
 public class Display extends Application {
 
 	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2;
+	ArrayList<String> order_ingredients = new ArrayList<>();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -118,27 +119,6 @@ public class Display extends Application {
 
 		saladNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
-				System.out.println("Fillings:");
-
-				for (int i = 0; i < filling_checkboxes.size(); i++) {
-					if (filling_checkboxes.get(i).isSelected()) {
-						System.out.println(fillings.get(i));
-					}
-				}
-
-//				if (salad1.isSelected())
-//				{
-//					System.out.println("Lettuce is selected");
-//				}
-//				if (salad2.isSelected())
-//				{
-//					System.out.println("Tomatoes is selected");
-//				}
-//				if (salad3.isSelected())
-//				{
-//					System.out.println("Cucumber is selected");
-//				}
 				primaryStage.setScene(scene5);
 			}
 		}
@@ -159,32 +139,25 @@ public class Display extends Application {
 
 		VBox layout5 = new VBox(75);
 		HBox layout5Inner = new HBox(20);
-
-		CheckBox sauce1 = new CheckBox("Mayonaise");
-		CheckBox sauce2 = new CheckBox("BBQ");
-		CheckBox sauce3 = new CheckBox("Aoli");
-		sauce1.setSelected(true);
-
+		
+		ArrayList<String> sauces = Ingredient.getAllSauces();
+		ArrayList<CheckBox> sauces_checkboxes = new ArrayList<>();
+		for (int i = 0; i < sauces.size(); i++) {
+			CheckBox sauce = new CheckBox(sauces.get(i));
+			if (i == 0) {
+				sauce.setSelected(true);
+			}
+			layout5Inner.getChildren().add(sauce);
+			sauces_checkboxes.add(sauce);
+		}
+		
 		Button sauceNext = new Button("Next");
 
 		sauceNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 
-				System.out.println("Sauces:");
-				if (sauce1.isSelected())
-				{
-					System.out.println("Mayonaise is selected");
-				}
-				if (sauce2.isSelected())
-				{
-					System.out.println("BBQ is selected");
-				}
-				if (sauce3.isSelected())
-				{
-					System.out.println("Aoli is selected");
-				}
 				primaryStage.setScene(scene6);
-				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
+
 			}
 
 		}    
@@ -194,7 +167,6 @@ public class Display extends Application {
 
 		sauceNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout5Inner.getChildren().addAll(sauce1,sauce2,sauce3);
 		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext);
 		layout5.setAlignment(Pos.CENTER);
 		layout5Inner.setAlignment(Pos.CENTER);
@@ -250,7 +222,47 @@ public class Display extends Application {
 		VBox layout7 = new VBox(75);
 
 		Button confirmNext = new Button("Next");
-		confirmNext.setOnAction(e -> primaryStage.setScene(scene8));
+		
+		confirmNext.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				
+//				System.out.println("Burger");
+				String burger_ordered = burger.getValue().toString();
+				order_ingredients.add(burger_ordered);
+//				System.out.println(burger_ordered);
+				
+//				System.out.println("Bun");
+				String bun_ordered = bun.getValue().toString();
+				order_ingredients.add(bun_ordered);
+//				System.out.println(burger_ordered);
+				
+//				System.out.println("Filling");
+				for (int i = 0; i < filling_checkboxes.size(); i++) {
+					if (filling_checkboxes.get(i).isSelected()) {
+						order_ingredients.add(fillings.get(i));
+					}
+				}
+				
+//				System.out.println("Sauces");
+				for (int i = 0; i < sauces_checkboxes.size(); i++) {
+					if (sauces_checkboxes.get(i).isSelected()) {
+						order_ingredients.add(sauces.get(i));
+					}
+				}
+				
+				
+				for(int i = 0; i < order_ingredients.size(); i++) {
+					System.out.println(order_ingredients.get(i));
+				}
+				
+
+				primaryStage.setScene(scene8);
+				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
+			}
+
+		}    
+				);
+
 
 		confirmNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
