@@ -22,6 +22,9 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.Reflection;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
@@ -29,6 +32,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 public class Display extends Application {
@@ -49,21 +53,39 @@ public class Display extends Application {
 		primaryStage.setTitle("Welcome to Happy Burger");
 		// Scene 1
 
-		Text title = new Text("Happy Burger");
-		title.setFont(Font.font ("Helvetica", 50));
-		title.setFill(Color.web("#ee0000"));		
-
+		Text title = new Text("    Happy Burger    ");
+		title.setFont(Font.font ("Helvetica", FontWeight.BOLD, 50));
+		title.setFill(Color.BLACK);
+		Reflection r = new Reflection();
+		r.setFraction(0.5f);
+		title.setEffect(r);
+		
 		Button orderButton = new Button("Place an order");
 		orderButton.setOnAction(e -> primaryStage.setScene(scene2));
+		
 		Button serverButton = new Button("Staff login");
 		serverButton.setOnAction(e -> primaryStage.setScene(server1));
+		
 		VBox layout1 = new VBox(25);
 		VBox layout1Inner = new VBox(200);
+	
+		Image image = new Image(getClass().getResourceAsStream("happyhamburger2.png"));
+		HBox happy = new HBox();
+		happy.setAlignment(Pos.TOP_CENTER);
+		ImageView hamburger = new ImageView(image);
+		ImageView hamburger2 = new ImageView(image);
+		hamburger.setFitHeight(150);
+		hamburger.setFitWidth(200);
+		hamburger2.setFitHeight(150);
+		hamburger2.setFitWidth(200);
+		happy.getChildren().addAll(hamburger, title, hamburger2);
+		
 		orderButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 		serverButton.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		
 		layout1.setStyle("-fx-background-color: #8ce2ff");
 		layout1Inner.getChildren().addAll(orderButton, serverButton);
-		layout1.getChildren().addAll(title, layout1Inner);
+		layout1.getChildren().addAll(happy, layout1Inner);
 		layout1.setAlignment(Pos.CENTER);
 		layout1Inner.setAlignment(Pos.CENTER);
 		scene1 = new Scene(layout1, screen_width, screen_height);
