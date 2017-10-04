@@ -26,8 +26,6 @@ public class Display extends Application {
 
 	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2;
 	
-	String name, phone;
-
 	@Override
 	public void start(Stage primaryStage) {
 
