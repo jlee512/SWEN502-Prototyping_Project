@@ -360,6 +360,6 @@ public class Ingredient {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return -1.0;
 	}
 }
