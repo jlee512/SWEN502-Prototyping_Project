@@ -295,10 +295,10 @@ public class Display extends Application {
 		}    
 				);
 		detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		layout6User.getChildren().addAll(userName, userNameIn, buttonReturn5);
+		layout6User.getChildren().addAll(userName, userNameIn);
 		layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
 		detailVBox.getChildren().addAll(layout6User, layout6Pass);
-		layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
+		layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext, buttonReturn5);
 		layout6User.setAlignment(Pos.CENTER);
 		layout6Pass.setAlignment(Pos.CENTER);
 		layout6.setAlignment(Pos.CENTER);
