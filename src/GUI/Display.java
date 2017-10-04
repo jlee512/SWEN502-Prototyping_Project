@@ -199,6 +199,7 @@ public class Display extends Application {
 		VBox detailVBox = new VBox(20);
 		HBox layout6User = new HBox(20);
 		HBox layout6Pass = new HBox(20);
+		//
 		
 		Text userName = new Text("Name:");
 		TextField userNameIn = new TextField();
