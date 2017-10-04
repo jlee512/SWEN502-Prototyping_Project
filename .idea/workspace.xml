@@ -7,8 +7,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$2.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$3.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$3.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$4.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$5$1.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$5$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$5$2.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$5$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$5$3.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$5$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$5.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$5.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$6.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$6.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display$7.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display$7.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/GUI/Display.class" afterPath="$PROJECT_DIR$/out/production/Code/GUI/Display.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/Display.java" afterPath="$PROJECT_DIR$/src/GUI/Display.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,7 +151,7 @@
       <file leaf-file-name="Ingredient.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6138">
+            <state relative-caret-position="-5907">
               <caret line="166" column="21" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -172,32 +179,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Backend_BurgerCoApp.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Display.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="533" column="0" lean-forward="false" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
+            <state relative-caret-position="7260">
+              <caret line="345" column="24" lean-forward="false" selection-start-line="345" selection-start-column="24" selection-end-line="345" selection-end-column="24" />
               <folding>
-                <element signature="e#4764#4765#0" expanded="true" />
-                <element signature="e#4804#4805#0" expanded="true" />
-                <element signature="e#6860#6861#0" expanded="true" />
-                <element signature="e#6900#6901#0" expanded="true" />
-                <element signature="e#18828#18829#0" expanded="true" />
-                <element signature="e#18869#18870#0" expanded="true" />
-                <element signature="e#19150#19151#0" expanded="true" />
-                <element signature="e#19191#19192#0" expanded="true" />
+                <element signature="e#4872#4873#0" expanded="true" />
+                <element signature="e#4912#4913#0" expanded="true" />
+                <element signature="e#7006#7007#0" expanded="true" />
+                <element signature="e#7046#7047#0" expanded="true" />
+                <element signature="e#19088#19089#0" expanded="true" />
+                <element signature="e#19129#19130#0" expanded="true" />
+                <element signature="e#19410#19411#0" expanded="true" />
+                <element signature="e#19451#19452#0" expanded="true" />
+                <marker date="1507096940336" expanded="false" signature="19826:19831" ph=" { " />
+                <marker date="1507096940336" expanded="false" signature="19844:19847" ph=" }" />
               </folding>
             </state>
           </provider>
@@ -221,6 +218,14 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>600</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>screen_height</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -339,7 +344,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Backend_BurgerCoApp">
+  <component name="RunManager" selected="Application.Display">
     <configuration default="false" name="Backend_BurgerCoApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -789,8 +794,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Application.Backend_BurgerCoApp" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Display" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Display" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Backend_BurgerCoApp" />
       </list>
     </recent_temporary>
   </component>
@@ -815,7 +820,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40426000" />
+    <option name="totallyTimeSpent" value="41416000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
@@ -831,7 +836,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32978094" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32386026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32386026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1086,14 +1091,16 @@
         <state relative-caret-position="7689">
           <caret line="250" column="48" lean-forward="true" selection-start-line="250" selection-start-column="48" selection-end-line="250" selection-end-column="48" />
           <folding>
-            <element signature="e#4764#4765#0" expanded="true" />
-            <element signature="e#4804#4805#0" expanded="true" />
-            <element signature="e#6860#6861#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#18828#18829#0" expanded="true" />
-            <element signature="e#18869#18870#0" expanded="true" />
-            <element signature="e#19150#19151#0" expanded="true" />
-            <element signature="e#19191#19192#0" expanded="true" />
+            <element signature="e#4872#4873#0" expanded="true" />
+            <element signature="e#4912#4913#0" expanded="true" />
+            <element signature="e#7006#7007#0" expanded="true" />
+            <element signature="e#7046#7047#0" expanded="true" />
+            <element signature="e#19088#19089#0" expanded="true" />
+            <element signature="e#19129#19130#0" expanded="true" />
+            <element signature="e#19410#19411#0" expanded="true" />
+            <element signature="e#19451#19452#0" expanded="true" />
+            <marker date="1507096940336" expanded="false" signature="19826:19831" ph=" { " />
+            <marker date="1507096940336" expanded="false" signature="19844:19847" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1331,35 +1338,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6138">
-          <caret line="166" column="21" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1507078322552" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
-            <marker date="1507078322552" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
-            <marker date="1507078322552" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
-            <marker date="1507078322552" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
-            <marker date="1507078322552" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
-            <marker date="1507078322552" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
-            <marker date="1507078322552" expanded="true" signature="11817:11908" ph="SELECT i.uni... Ingredient" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SQL/database_setup.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="870">
@@ -1408,6 +1386,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/14b7244b/decb5e32-219e-4dac-a6c2-5c0eef5e961b/main.Ingredient">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1421,29 +1409,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
+    <entry file="file://$PROJECT_DIR$/src/Controller/Ingredient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="533" column="0" lean-forward="false" selection-start-line="533" selection-start-column="0" selection-end-line="533" selection-end-column="0" />
+        <state relative-caret-position="-5907">
+          <caret line="166" column="21" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
           <folding>
-            <element signature="e#4764#4765#0" expanded="true" />
-            <element signature="e#4804#4805#0" expanded="true" />
-            <element signature="e#6860#6861#0" expanded="true" />
-            <element signature="e#6900#6901#0" expanded="true" />
-            <element signature="e#18828#18829#0" expanded="true" />
-            <element signature="e#18869#18870#0" expanded="true" />
-            <element signature="e#19150#19151#0" expanded="true" />
-            <element signature="e#19191#19192#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <marker date="1507078322552" expanded="true" signature="805:865" ph="UPDATE Ingre... " />
+            <marker date="1507078322552" expanded="true" signature="1616:1676" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="1616:1680" ph="SELECT i.qua... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="2457:2515" ph="UPDATE Ingre... " />
+            <marker date="1507078322552" expanded="true" signature="2457:2516" ph="UPDATE Ingre... " />
+            <marker date="1507078322552" expanded="true" signature="2457:2517" ph="UPDATE Ingre... " />
+            <marker date="1507078322552" expanded="true" signature="2457:2518" ph="UPDATE Ingre... " />
+            <marker date="1507078322552" expanded="true" signature="3200:3266" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="4096:4158" ph="SELECT ingre... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="4909:5061" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="4909:5080" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="5761:5931" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="6617:6791" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="7475:7647" ph="SELECT i.ing... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="8336:8502" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="9205:9370" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="10069:10238" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="10941:11108" ph="SELECT i.uni... Ingredient" />
+            <marker date="1507078322552" expanded="true" signature="11817:11908" ph="SELECT i.uni... Ingredient" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="42" column="62" lean-forward="false" selection-start-line="42" selection-start-column="62" selection-end-line="42" selection-end-column="62" />
+        <state relative-caret-position="7260">
+          <caret line="345" column="24" lean-forward="false" selection-start-line="345" selection-start-column="24" selection-end-line="345" selection-end-column="24" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#4872#4873#0" expanded="true" />
+            <element signature="e#4912#4913#0" expanded="true" />
+            <element signature="e#7006#7007#0" expanded="true" />
+            <element signature="e#7046#7047#0" expanded="true" />
+            <element signature="e#19088#19089#0" expanded="true" />
+            <element signature="e#19129#19130#0" expanded="true" />
+            <element signature="e#19410#19411#0" expanded="true" />
+            <element signature="e#19451#19452#0" expanded="true" />
+            <marker date="1507096940336" expanded="false" signature="19826:19831" ph=" { " />
+            <marker date="1507096940336" expanded="false" signature="19844:19847" ph=" }" />
           </folding>
         </state>
       </provider>

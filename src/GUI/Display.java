@@ -39,6 +39,8 @@ public class Display extends Application {
 	int phone_number = -1;
 	int user_id = -1;
 	String password = "";
+	int screen_width = 850;
+	int screen_height = 600;
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -63,7 +65,7 @@ public class Display extends Application {
 		layout1.getChildren().addAll(title, layout1Inner);
 		layout1.setAlignment(Pos.CENTER);
 		layout1Inner.setAlignment(Pos.CENTER);
-		scene1 = new Scene(layout1, 420, 600);
+		scene1 = new Scene(layout1, screen_width, screen_height);
 
 		primaryStage.setScene(scene1);
 		primaryStage.show();
@@ -87,7 +89,7 @@ public class Display extends Application {
 
 		layout2.getChildren().addAll(selectBurger, burger, meatNext);
 		layout2.setAlignment(Pos.CENTER);
-		scene2 = new Scene(layout2, 420, 600);
+		scene2 = new Scene(layout2, screen_width, screen_height);
 
 		BorderPane componentLayout = new BorderPane(); 
 
@@ -109,7 +111,7 @@ public class Display extends Application {
 
 		layout3.getChildren().addAll(selectBun, bun, bunNext);
 		layout3.setAlignment(Pos.CENTER);
-		scene3 = new Scene(layout3, 420, 600);
+		scene3 = new Scene(layout3, screen_width, screen_height);
 
 		// Scene 4
 
@@ -145,7 +147,7 @@ public class Display extends Application {
 		layout4.getChildren().addAll(selectSalad,layout4Inner,saladNext);
 		layout4.setAlignment(Pos.CENTER);
 		layout4Inner.setAlignment(Pos.CENTER);
-		scene4 = new Scene(layout4, 420, 600);
+		scene4 = new Scene(layout4, screen_width, screen_height);
 
 		// Scene 5
 
@@ -183,7 +185,7 @@ public class Display extends Application {
 		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext);
 		layout5.setAlignment(Pos.CENTER);
 		layout5Inner.setAlignment(Pos.CENTER);
-		scene5 = new Scene(layout5, 420, 600);
+		scene5 = new Scene(layout5, screen_width, screen_height);
 
 		// Scene 6
 
@@ -219,7 +221,7 @@ public class Display extends Application {
 		layout6User.setAlignment(Pos.CENTER);
 		layout6Pass.setAlignment(Pos.CENTER);
 		layout6.setAlignment(Pos.CENTER);
-		scene6 = new Scene(layout6, 420, 600);
+		scene6 = new Scene(layout6, screen_width, screen_height);
 
 		// Scene 7
 
@@ -284,7 +286,7 @@ public class Display extends Application {
 
 		layout7.getChildren().addAll(confirm, confirmNext);
 		layout7.setAlignment(Pos.CENTER);
-		scene7 = new Scene(layout7, 420, 600);
+		scene7 = new Scene(layout7, screen_width, screen_height);
 
 		// Scene 8
 
@@ -301,7 +303,7 @@ public class Display extends Application {
 
 		layout8.getChildren().addAll(finalMessage, buttonReturn);
 		layout8.setAlignment(Pos.CENTER);
-		scene8 = new Scene(layout8, 420, 600);
+		scene8 = new Scene(layout8, screen_width, screen_height);
 
 		//Staff side of the display
 		// Server scene 1
@@ -441,7 +443,7 @@ public class Display extends Application {
 						serverlayout3.getChildren().add(serverlayoutInner3);
 						serverlayout3.setAlignment(Pos.CENTER);
 						serverlayoutInner3.setAlignment(Pos.CENTER);
-						server3 = new Scene(serverlayout3, 420, 600);
+						server3 = new Scene(serverlayout3, screen_width, screen_height);
 						primaryStage.setScene(server2);
 						
 						/**Display the list of ingredients in checkboxes
@@ -472,7 +474,7 @@ public class Display extends Application {
 						serverlayout4.getChildren().addAll(serverlayoutInner);
 						serverlayout4.setAlignment(Pos.CENTER);
 						serverlayoutInner.setAlignment(Pos.CENTER);
-						server4 = new Scene(serverlayout4, 420, 600);
+						server4 = new Scene(serverlayout4, screen_width, screen_height);
 						
 					} else {
 						System.out.println("Employee credentials could not be verified");
@@ -496,7 +498,7 @@ public class Display extends Application {
 		server1Pass.setAlignment(Pos.CENTER);
 		serverlayout1.setAlignment(Pos.CENTER);
 		serverVBox.setAlignment(Pos.CENTER);
-		server1 = new Scene(serverlayout1, 420, 600);
+		server1 = new Scene(serverlayout1, screen_width, screen_height);
 
 		// Server scene 2
 
@@ -525,7 +527,7 @@ public class Display extends Application {
 		serverlayout2.getChildren().addAll(orderHeader,orderBox,Restock, getToDoList);
 		orderBox.setAlignment(Pos.TOP_CENTER);
 		serverlayout2.setAlignment(Pos.CENTER);
-		server2 = new Scene(serverlayout2, 420, 600);
+		server2 = new Scene(serverlayout2, screen_width, screen_height);
 		
 		
 		//Server scene 3 - Assign & complete orders 
