@@ -188,40 +188,38 @@ public class Display extends Application {
 
 		// Scene 6
 
-		Text enterDetails = new Text("Enter your details:");
-		enterDetails.setFont(Font.font ("Helvetica", 25));
-		enterDetails.setFill(Color.web("#ee0000"));		
 
-		VBox layout6 = new VBox(75);
-		VBox detailVBox = new VBox(20);
-		HBox layout6User = new HBox(20);
-		HBox layout6Pass = new HBox(20);
-
-		Text userName = new Text("Name:");
-		TextField userNameIn = new TextField();
-		userNameIn.getText();
-		//System.out.println(userNameIn);
-
-		Text userPhone = new Text("Phone:");
-		TextField userPhoneIn = new TextField();
-		String phone = userPhoneIn.getText();
-		System.out.println(phone);
-
-		Button detailsNext = new Button("Next");
-		detailsNext.setOnAction(e -> primaryStage.setScene(scene7));
-
-		detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		
-		//layout6User.setConstraints(userNameIn, 0, 0);
-		//detailVBox.getChildren().add(userNameIn);
-		layout6User.getChildren().addAll(userName, userNameIn);
-		layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
-		detailVBox.getChildren().addAll(layout6User, layout6Pass);
-		layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
-		layout6User.setAlignment(Pos.CENTER);
-		layout6Pass.setAlignment(Pos.CENTER);
-		layout6.setAlignment(Pos.CENTER);
-		scene6 = new Scene(layout6, 320, 480);
+        Text enterDetails = new Text("Enter your details:");
+        enterDetails.setFont(Font.font ("Helvetica", 25));
+        enterDetails.setFill(Color.web("#ee0000"));        
+        VBox layout6 = new VBox(75);
+        VBox detailVBox = new VBox(20);
+        HBox layout6User = new HBox(20);
+        HBox layout6Pass = new HBox(20);
+        Text userName = new Text("Name:");
+        TextField userNameIn = new TextField();
+        String name = userNameIn.getText();
+        Text userPhone = new Text("Phone:");
+        TextField userPhoneIn = new TextField();
+        String phone = userPhoneIn.getText();
+        Button detailsNext = new Button("Next");
+        detailsNext.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                System.out.println(name);
+                System.out.println(phone);
+                primaryStage.setScene(scene7);
+            }
+        }    
+                );
+        detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+        layout6User.getChildren().addAll(userName, userNameIn);
+        layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
+        detailVBox.getChildren().addAll(layout6User, layout6Pass);
+        layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
+        layout6User.setAlignment(Pos.CENTER);
+        layout6Pass.setAlignment(Pos.CENTER);
+        layout6.setAlignment(Pos.CENTER);
+        scene6 = new Scene(layout6, 320, 480);
 
 		// Scene 7
 
