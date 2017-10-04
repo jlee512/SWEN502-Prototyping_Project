@@ -27,5 +27,17 @@ UPDATE Ingredient SET quantity = 3 WHERE ingredient_name = "Cucumber";
 -- Query stock level
 SELECT i.quantity FROM Ingredient as i WHERE ingredient_name = "Cucumber";
 
+-- Query all burger types
+SELECT i.ingredient_name FROM Ingredient as i, Ingredient_type as it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = "Meat";
+
+-- Query all bread types
+SELECT i.ingredient_name FROM Ingredient as i, Ingredient_type as it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = "Bun";
+
+-- Query all filling types
+SELECT i.ingredient_name FROM Ingredient as i, Ingredient_type as it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = "Filling";
+
+-- Query all sauce types
+SELECT i.ingredient_name FROM Ingredient as i, Ingredient_type as it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = "Sauce";
+
 
 
