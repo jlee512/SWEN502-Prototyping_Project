@@ -1,9 +1,13 @@
 package GUI;
 
 import java.awt.Insets;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
+import Controller.BadPasswordException;
+import Controller.Employee;
 import Controller.Ingredient;
+import Controller.NonExistentUserException;
 import Controller.Order;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -31,7 +35,7 @@ public class Display extends Application {
 	ArrayList<String> order_ingredients = new ArrayList<>();
 	String customer_name = "";
 	int phone_number = -1;
-	
+
 	@Override
 	public void start(Stage primaryStage) {
 
@@ -142,7 +146,7 @@ public class Display extends Application {
 
 		VBox layout5 = new VBox(75);
 		HBox layout5Inner = new HBox(20);
-		
+
 		ArrayList<String> sauces = Ingredient.getAllSauces();
 		ArrayList<CheckBox> sauces_checkboxes = new ArrayList<>();
 		for (int i = 0; i < sauces.size(); i++) {
@@ -153,7 +157,7 @@ public class Display extends Application {
 			layout5Inner.getChildren().add(sauce);
 			sauces_checkboxes.add(sauce);
 		}
-		
+
 		Button sauceNext = new Button("Next");
 
 		sauceNext.setOnAction(new EventHandler<ActionEvent>() {
@@ -178,19 +182,19 @@ public class Display extends Application {
 		Text enterDetails = new Text("Enter your details:");
 		enterDetails.setFont(Font.font ("Helvetica", 25));
 		enterDetails.setFill(Color.web("#ee0000"));   
-		
+
 		VBox layout6 = new VBox(75);
 		VBox detailVBox = new VBox(20);
 		HBox layout6User = new HBox(20);
 		HBox layout6Pass = new HBox(20);
 		//
-		
+
 		Text userName = new Text("Name:");
 		TextField userNameIn = new TextField();
-		
+
 		Text userPhone = new Text("Phone:");
 		TextField userPhoneIn = new TextField();
-		
+
 		Button detailsNext = new Button("Next");
 		detailsNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
@@ -218,44 +222,44 @@ public class Display extends Application {
 		VBox layout7 = new VBox(75);
 
 		Button confirmNext = new Button("Next");
-		
+
 		confirmNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				
-//				System.out.println("Burger");
+
+				//				System.out.println("Burger");
 				String burger_ordered = burger.getValue().toString();
 				order_ingredients.add(burger_ordered);
-//				System.out.println(burger_ordered);
-				
-//				System.out.println("Bun");
+				//				System.out.println(burger_ordered);
+
+				//				System.out.println("Bun");
 				String bun_ordered = bun.getValue().toString();
 				order_ingredients.add(bun_ordered);
-//				System.out.println(burger_ordered);
-				
-//				System.out.println("Filling");
+				//				System.out.println(burger_ordered);
+
+				//				System.out.println("Filling");
 				for (int i = 0; i < filling_checkboxes.size(); i++) {
 					if (filling_checkboxes.get(i).isSelected()) {
 						order_ingredients.add(fillings.get(i));
 					}
 				}
-				
-//				System.out.println("Sauces");
+
+				//				System.out.println("Sauces");
 				for (int i = 0; i < sauces_checkboxes.size(); i++) {
 					if (sauces_checkboxes.get(i).isSelected()) {
 						order_ingredients.add(sauces.get(i));
 					}
 				}
-				
-				
+
+
 				for(int i = 0; i < order_ingredients.size(); i++) {
 					System.out.println(order_ingredients.get(i));
 				}
-				
+
 				customer_name = userNameIn.getText();
 				phone_number = Integer.parseInt(userPhoneIn.getText());
-//				System.out.println(customer_name);
-//				System.out.println(phone_number);	
-				
+				//				System.out.println(customer_name);
+				//				System.out.println(phone_number);	
+
 				Order.createOrder(customer_name, phone_number, order_ingredients);
 
 				primaryStage.setScene(scene8);
@@ -288,6 +292,7 @@ public class Display extends Application {
 		layout8.setAlignment(Pos.CENTER);
 		scene8 = new Scene(layout8, 420, 600);
 
+		//Staff side of the display
 		// Server scene 1
 
 		VBox serverlayout1 = new VBox(75);
@@ -302,17 +307,41 @@ public class Display extends Application {
 		TextField staffPassIn = new TextField();
 
 		Button loginButton = new Button("Login");
-		loginButton.setOnAction(e -> primaryStage.setScene(server2));
 
 		loginButton.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
+		Label noaccess = new Label();
+		
+		loginButton.setOnAction(new EventHandler<ActionEvent>() {
+			@Override public void handle(ActionEvent e) {
+				int userID = Integer.parseInt(serverIDIn.getText());
+				String password = staffPassIn.getText();
+
+				try {
+					if (Employee.validateUser(userID, password)) {
+						System.out.println("Employee #" + userID + " credentials verified");
+					} else {
+						System.out.println("Employee credentials could not be verified");
+					}
+				} catch (UnsupportedEncodingException e1) {
+					e1.printStackTrace();
+				} catch (NonExistentUserException e2){
+					noaccess.setText("User does not exist");
+				} catch (BadPasswordException e3){
+					noaccess.setText("Password is incorrect");
+				}
+
+			}
+		});
+
 		server1ID.getChildren().addAll(serverID, serverIDIn);
 		server1Pass.getChildren().addAll(staffPass, staffPassIn);
-		serverVBox.getChildren().addAll(server1ID, server1Pass);
+		serverVBox.getChildren().addAll(server1ID, server1Pass, noaccess);
 		serverlayout1.getChildren().addAll(serverVBox, loginButton);
 		server1ID.setAlignment(Pos.CENTER);
 		server1Pass.setAlignment(Pos.CENTER);
 		serverlayout1.setAlignment(Pos.CENTER);
+		serverVBox.setAlignment(Pos.CENTER);
 		server1 = new Scene(serverlayout1, 420, 600);
 
 		// Server scene 2
