@@ -93,12 +93,18 @@ public class Display extends Application {
 		burger.setItems(burger_list);
 		burger.getSelectionModel().selectFirst();
 
+		Button buttonReturn = new Button("Restart your order");
+		buttonReturn.setOnAction(e1 -> primaryStage.setScene(scene1));
+
+		buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
+		
 		Button meatNext = new Button("Next");
 		meatNext.setOnAction(e -> primaryStage.setScene(scene3));
 
 		meatNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout2.getChildren().addAll(selectBurger, burger, meatNext);
+		layout2.getChildren().addAll(selectBurger, burger, meatNext, buttonReturn);
 		layout2.setAlignment(Pos.CENTER);
 		scene2 = new Scene(layout2, screen_width, screen_height);
 
@@ -124,13 +130,19 @@ public class Display extends Application {
 		ChoiceBox bun = new ChoiceBox();
 		bun.setItems(bun_list);
 		bun.getSelectionModel().selectFirst();
+		
+		Button buttonReturn2 = new Button("Restart your order");
+		buttonReturn2.setOnAction(e1 -> primaryStage.setScene(scene1));
 
+		buttonReturn2.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
+		
 		Button bunNext = new Button("Next");
 		bunNext.setOnAction(e -> primaryStage.setScene(scene4));
 
 		bunNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout3.getChildren().addAll(selectBun, bun, bunNext);
+		layout3.getChildren().addAll(selectBun, bun, bunNext, buttonReturn2);
 		layout3.setAlignment(Pos.CENTER);
 		layout3.setStyle("-fx-background-color: #8ce2ff");
 		scene3 = new Scene(layout3, screen_width, screen_height);
@@ -156,6 +168,10 @@ public class Display extends Application {
 			layout4Inner.getChildren().add(filling);
 			filling_checkboxes.add(filling);
 		}
+		Button buttonReturn3 = new Button("Restart your order");
+		buttonReturn3.setOnAction(e1 -> primaryStage.setScene(scene1));
+
+		buttonReturn3.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		Button saladNext = new Button("Next");
 
@@ -168,7 +184,7 @@ public class Display extends Application {
 
 		saladNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout4.getChildren().addAll(selectSalad,layout4Inner,saladNext);
+		layout4.getChildren().addAll(selectSalad,layout4Inner,saladNext, buttonReturn3);
 		layout4.setAlignment(Pos.CENTER);
 		layout4.setStyle("-fx-background-color: #8ce2ff");
 		layout4Inner.setAlignment(Pos.CENTER);
@@ -195,6 +211,11 @@ public class Display extends Application {
 			sauces_checkboxes.add(sauce);
 		}
 
+		Button buttonReturn4 = new Button("Restart your order");
+		buttonReturn4.setOnAction(e1 -> primaryStage.setScene(scene1));
+
+		buttonReturn4.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
 		Button sauceNext = new Button("Next");
 
 		sauceNext.setOnAction(new EventHandler<ActionEvent>() {
@@ -208,7 +229,7 @@ public class Display extends Application {
 				);
 		sauceNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
-		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext);
+		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext, buttonReturn4);
 		layout5.setAlignment(Pos.CENTER);
 		layout5Inner.setAlignment(Pos.CENTER);
 		layout5.setStyle("-fx-background-color: #8ce2ff");
@@ -232,6 +253,12 @@ public class Display extends Application {
 
 		Text userPhone = new Text("Phone:");
 		TextField userPhoneIn = new TextField();
+		
+		Button buttonReturn5 = new Button("Restart your order");
+		buttonReturn5.setOnAction(e1 -> primaryStage.setScene(scene1));
+
+		buttonReturn5.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
 
 		Button detailsNext = new Button("Next");
 		detailsNext.setOnAction(new EventHandler<ActionEvent>() {
@@ -246,7 +273,7 @@ public class Display extends Application {
 		}    
 				);
 		detailsNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
-		layout6User.getChildren().addAll(userName, userNameIn);
+		layout6User.getChildren().addAll(userName, userNameIn, buttonReturn5);
 		layout6Pass.getChildren().addAll(userPhone, userPhoneIn);
 		detailVBox.getChildren().addAll(layout6User, layout6Pass);
 		layout6.getChildren().addAll(enterDetails, detailVBox, detailsNext);
@@ -265,6 +292,12 @@ public class Display extends Application {
 
 		VBox layout7 = new VBox(75);
 		layout7.setStyle("-fx-background-color: #8ce2ff");
+		
+		Button buttonReturn6 = new Button("Restart your order");
+		buttonReturn6.setOnAction(e1 -> primaryStage.setScene(scene1));
+
+		buttonReturn6.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+
 
 		Button confirmNext = new Button("Next");
 
