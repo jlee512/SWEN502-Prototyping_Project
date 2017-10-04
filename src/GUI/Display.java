@@ -4,6 +4,7 @@ import java.awt.Insets;
 import java.util.ArrayList;
 
 import Controller.Ingredient;
+import Controller.Order;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -28,6 +29,8 @@ public class Display extends Application {
 
 	Scene scene1, scene2, scene3, scene4, scene5, scene6, scene7, scene8, server1, server2;
 	ArrayList<String> order_ingredients = new ArrayList<>();
+	String customer_name = "";
+	int phone_number = -1;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -162,9 +165,6 @@ public class Display extends Application {
 
 		}    
 				);
-		
-		
-
 		sauceNext.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		layout5.getChildren().addAll(selectSauce,layout5Inner,sauceNext);
@@ -194,10 +194,6 @@ public class Display extends Application {
 		Button detailsNext = new Button("Next");
 		detailsNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
-				String name = userNameIn.getText();
-				String phone = userPhoneIn.getText();
-				System.out.println(name);
-				System.out.println(phone);
 				primaryStage.setScene(scene7);
 			}
 		}    
@@ -255,9 +251,14 @@ public class Display extends Application {
 					System.out.println(order_ingredients.get(i));
 				}
 				
+				customer_name = userNameIn.getText();
+				phone_number = Integer.parseInt(userPhoneIn.getText());
+//				System.out.println(customer_name);
+//				System.out.println(phone_number);	
+				
+				Order.createOrder(customer_name, phone_number, order_ingredients);
 
 				primaryStage.setScene(scene8);
-				System.out.println("Order successful - you have ordered " + burger.getSelectionModel().getSelectedItem() + " burger");
 			}
 
 		}    
