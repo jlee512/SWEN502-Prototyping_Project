@@ -11,7 +11,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Order {
 
@@ -66,9 +68,14 @@ public class Order {
         File database_file = new File("Burger.sqlite");
         LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
         try (Connection c = db.connection()) {
-            try (PreparedStatement stmt = c.prepareStatement("INSERT INTO Burger_Order (user_alias, user_phone) VALUES (?, ?)")) {
+            try (PreparedStatement stmt = c.prepareStatement("INSERT INTO Burger_Order (user_alias, user_phone, timestamp) VALUES (?, ?, ?)")) {
+
+                SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date now = new Date();
+                String strDate = sdfDate.format(now);
                 stmt.setString(1, custname);
                 stmt.setInt(2, custphone);
+                stmt.setString(3, strDate);
                 stmt.executeUpdate();
                 System.out.println("Cust name: " + custname + " Phone: " + custphone + " order added");
             } catch (SQLException e) {

@@ -137,10 +137,14 @@ public class Ingredient {
 		File database_file = new File("Burger.sqlite");
 		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
 		try (Connection c = db.connection()) {
-			try (PreparedStatement stmt = c.prepareStatement("SELECT i.ingredient_name FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Meat';")) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.ingredient_name FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Meat' AND i.quantity > 0;")) {
 
 				try (ResultSet r = stmt.executeQuery()) {
-
+					ArrayList<String> burgers = new ArrayList<>();
+					while (r.next()) {
+						burgers.add(r.getString("ingredient_name"));
+					}
+					return burgers;
 				}
 
 			}
@@ -153,17 +157,74 @@ public class Ingredient {
 	}
 
 	public static ArrayList<String> getAllBreads(){
-		//Loop through the array list of all bread
+		//Loop through the array list of all breads
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.ingredient_name FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Bun' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<String> burgers = new ArrayList<>();
+					while (r.next()) {
+						burgers.add(r.getString("ingredient_name"));
+					}
+					return burgers;
+				}
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
-	public static ArrayList<String> getAllSalads(){
-		//Loop through the array list of all salads
+	public static ArrayList<String> getAllFillings(){
+		//Loop through the array list of all fillings
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.ingredient_name FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Filling' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<String> burgers = new ArrayList<>();
+					while (r.next()) {
+						burgers.add(r.getString("ingredient_name"));
+					}
+					return burgers;
+				}
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
 	public static ArrayList<String> getAllSauces(){
-		//Loop through the array list of all salads
+		//Loop through the array list of all fillings
+		File database_file = new File("Burger.sqlite");
+		LocalSQLiteDB db = new LocalSQLiteDB("sqlite", database_file.getAbsolutePath());
+		try (Connection c = db.connection()) {
+			try (PreparedStatement stmt = c.prepareStatement("SELECT i.ingredient_name FROM Ingredient AS i, Ingredient_type AS it WHERE it.ingrdient_type_id = i.ingredient_type AND it.ingredient_type_name = 'Sauce' AND i.quantity > 0;")) {
+
+				try (ResultSet r = stmt.executeQuery()) {
+					ArrayList<String> burgers = new ArrayList<>();
+					while (r.next()) {
+						burgers.add(r.getString("ingredient_name"));
+					}
+					return burgers;
+				}
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
