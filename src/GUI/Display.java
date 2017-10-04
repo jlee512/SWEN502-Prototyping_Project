@@ -54,11 +54,8 @@ public class Display extends Application {
 		// Scene 1
 
 		Text title = new Text("    Happy Burger    ");
-		title.setFont(Font.font ("Helvetica", FontWeight.BOLD, 50));
-		title.setFill(Color.BLACK);
-		Reflection r = new Reflection();
-		r.setFraction(0.5f);
-		title.setEffect(r);
+		title.setFont(Font.font ("Helvetica", 50));
+		title.setFill(Color.web("000066"));
 		
 		Button orderButton = new Button("Place an order");
 		orderButton.setOnAction(e -> primaryStage.setScene(scene2));
@@ -67,7 +64,7 @@ public class Display extends Application {
 		serverButton.setOnAction(e -> primaryStage.setScene(server1));
 		
 		VBox layout1 = new VBox(25);
-		VBox layout1Inner = new VBox(200);
+		VBox layout1Inner = new VBox(150);
 	
 		Image image = new Image(getClass().getResourceAsStream("happyhamburger2.png"));
 		HBox happy = new HBox();
@@ -88,6 +85,7 @@ public class Display extends Application {
 		layout1.getChildren().addAll(happy, layout1Inner);
 		layout1.setAlignment(Pos.CENTER);
 		layout1Inner.setAlignment(Pos.CENTER);
+		happy.setAlignment(Pos.CENTER);
 		scene1 = new Scene(layout1, screen_width, screen_height);
 
 		primaryStage.setScene(scene1);
@@ -97,7 +95,7 @@ public class Display extends Application {
 
 		Text selectBurger = new Text("Choose your burger:");
 		selectBurger.setFont(Font.font ("Helvetica", 25));
-		selectBurger.setFill(Color.web("#ee0000"));		
+		selectBurger.setFill(Color.web("#000066"));		
 
 		VBox layout2 = new VBox(75);
 		layout2.setStyle("-fx-background-color: #8ce2ff");
@@ -115,10 +113,10 @@ public class Display extends Application {
 		burger.setItems(burger_list);
 		burger.getSelectionModel().selectFirst();
 
-		Button buttonReturn = new Button("Restart your order");
+		Button buttonReturn = new Button("Cancel");
 		buttonReturn.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-		buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		buttonReturn.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		
 		Button meatNext = new Button("Next");
@@ -136,7 +134,7 @@ public class Display extends Application {
 
 		Text selectBun = new Text("Choose your bun:");
 		selectBun.setFont(Font.font ("Helvetica", 25));
-		selectBun.setFill(Color.web("#ee0000"));		
+		selectBun.setFill(Color.web("#000066"));		
 
 		VBox layout3 = new VBox(75);
 
@@ -153,10 +151,10 @@ public class Display extends Application {
 		bun.setItems(bun_list);
 		bun.getSelectionModel().selectFirst();
 		
-		Button buttonReturn2 = new Button("Restart your order");
+		Button buttonReturn2 = new Button("Cancel");
 		buttonReturn2.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-		buttonReturn2.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		buttonReturn2.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		
 		Button bunNext = new Button("Next");
@@ -173,7 +171,7 @@ public class Display extends Application {
 
 		Text selectSalad = new Text("Choose your filling:");
 		selectSalad.setFont(Font.font ("Helvetica", 25));
-		selectSalad.setFill(Color.web("#ee0000"));		
+		selectSalad.setFill(Color.web("#000066"));		
 
 		VBox layout4 = new VBox(75);
 		HBox layout4Inner = new HBox(20);
@@ -190,10 +188,10 @@ public class Display extends Application {
 			layout4Inner.getChildren().add(filling);
 			filling_checkboxes.add(filling);
 		}
-		Button buttonReturn3 = new Button("Restart your order");
+		Button buttonReturn3 = new Button("Cancel");
 		buttonReturn3.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-		buttonReturn3.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		buttonReturn3.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		Button saladNext = new Button("Next");
 
@@ -216,7 +214,7 @@ public class Display extends Application {
 
 		Text selectSauce = new Text("Choose your sauce:");
 		selectSauce.setFont(Font.font ("Helvetica", 25));
-		selectSauce.setFill(Color.web("#ee0000"));		
+		selectSauce.setFill(Color.web("#000066"));		
 
 		VBox layout5 = new VBox(75);
 		HBox layout5Inner = new HBox(20);
@@ -233,10 +231,10 @@ public class Display extends Application {
 			sauces_checkboxes.add(sauce);
 		}
 
-		Button buttonReturn4 = new Button("Restart your order");
+		Button buttonReturn4 = new Button("Cancel");
 		buttonReturn4.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-		buttonReturn4.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		buttonReturn4.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 		Button sauceNext = new Button("Next");
 
@@ -262,7 +260,7 @@ public class Display extends Application {
 
 		Text enterDetails = new Text("Enter your details:");
 		enterDetails.setFont(Font.font ("Helvetica", 25));
-		enterDetails.setFill(Color.web("#ee0000"));   
+		enterDetails.setFill(Color.web("#000066"));   
 
 		VBox layout6 = new VBox(75);
 		VBox detailVBox = new VBox(20);
@@ -276,10 +274,10 @@ public class Display extends Application {
 		Text userPhone = new Text("Phone:");
 		TextField userPhoneIn = new TextField();
 		
-		Button buttonReturn5 = new Button("Restart your order");
+		Button buttonReturn5 = new Button("Cancel");
 		buttonReturn5.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-		buttonReturn5.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		buttonReturn5.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 
 		Button detailsNext = new Button("Next");
@@ -310,15 +308,15 @@ public class Display extends Application {
 		Text confirm = new Text("Confirm your order:");
 
 		confirm.setFont(Font.font ("Helvetica", 25));
-		confirm.setFill(Color.web("#ee0000"));		
+		confirm.setFill(Color.web("#000066"));		
 
 		VBox layout7 = new VBox(75);
 		layout7.setStyle("-fx-background-color: #8ce2ff");
 		
-		Button buttonReturn6 = new Button("Restart your order");
+		Button buttonReturn6 = new Button("Cancel");
 		buttonReturn6.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-		buttonReturn6.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+		buttonReturn6.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 
 		Button confirmNext = new Button("Next");
@@ -376,9 +374,9 @@ public class Display extends Application {
 				Text finalMessage = new Text("Thank you, your order has been processed");
 				Text totalPrice = new Text(order_price);
 				finalMessage.setFont(Font.font ("Helvetica", 20));
-				finalMessage.setFill(Color.web("#ee0000"));
+				finalMessage.setFill(Color.web("#000066"));
 				totalPrice.setFont(Font.font ("Helvetica", 20));
-				totalPrice.setFill(Color.web("#ee0000"));
+				totalPrice.setFill(Color.web("#000066"));
 
 				VBox layout8 = new VBox(75);
 				layout8.setStyle("-fx-background-color: #8ce2ff");
@@ -386,7 +384,7 @@ public class Display extends Application {
 				Button buttonReturn = new Button("Return");
 				buttonReturn.setOnAction(e1 -> primaryStage.setScene(scene1));
 
-				buttonReturn.setStyle("-fx-background-color: #ff6633;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
+				buttonReturn.setStyle("-fx-background-color: #0099cc;-fx-background-radius: 0,0,0;-fx-font: 20px Tahoma;-fx-text-fill: white;");
 
 				layout8.getChildren().addAll(finalMessage, totalPrice, buttonReturn);
 				layout8.setAlignment(Pos.CENTER);
@@ -609,7 +607,7 @@ public class Display extends Application {
 		VBox serverlayout2 = new VBox(75);
 		Text orderHeader = new Text("Orders:");
 		orderHeader.setFont(Font.font ("Helvetica", 25));
-		orderHeader.setFill(Color.web("#ee0000"));		
+		orderHeader.setFill(Color.web("#000066"));		
 		HBox orderBox = new HBox(10);
 
 		Button getToDoList = new Button("Get To Do List");
