@@ -289,7 +289,7 @@ public class Display extends Application {
 		detailsNext.setOnAction(new EventHandler<ActionEvent>() {
 			@Override public void handle(ActionEvent e) {
 				if (userNameIn.getText().isEmpty() || userPhoneIn.getText().isEmpty()) {
-					Label missing_details = new Label("Order details missing");
+					Label missing_details = new Label("Please enter your name and phone number");
 					layout6.getChildren().add(missing_details);
 				} else {
 					primaryStage.setScene(scene7);

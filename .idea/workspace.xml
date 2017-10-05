@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1c3a82-ea91-4f64-b86b-3131f8228d6e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Burger.sqlite" afterPath="$PROJECT_DIR$/Burger.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" afterPath="$PROJECT_DIR$/out/production/Code/Controller/Backend_BurgerCoApp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" afterPath="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GUI/Display.java" afterPath="$PROJECT_DIR$/src/GUI/Display.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,7 +101,25 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="Display.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="291" column="94" lean-forward="false" selection-start-line="291" selection-start-column="94" selection-end-line="291" selection-end-column="94" />
+              <folding>
+                <marker date="1507163240033" expanded="false" signature="7367:7374" ph=" { " />
+                <marker date="1507163240033" expanded="false" signature="7404:7409" ph=" }" />
+                <marker date="1507163240033" expanded="false" signature="25017:25024" ph=" { " />
+                <marker date="1507163240033" expanded="false" signature="25055:25060" ph=" }" />
+                <marker date="1507163240033" expanded="false" signature="25339:25346" ph=" { " />
+                <marker date="1507163240033" expanded="false" signature="25377:25382" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -147,8 +162,8 @@
         <option value="$PROJECT_DIR$/src/Controller/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/Controller/Order.java" />
         <option value="$PROJECT_DIR$/SQL/database_initialdata" />
-        <option value="$PROJECT_DIR$/src/GUI/Display.java" />
         <option value="$PROJECT_DIR$/src/Controller/Backend_BurgerCoApp.java" />
+        <option value="$PROJECT_DIR$/src/GUI/Display.java" />
       </list>
     </option>
   </component>
@@ -764,10 +779,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52650000" />
+    <option name="totallyTimeSpent" value="53648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="3026" height="1946" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -785,7 +801,7 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12396978" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3059753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3059753" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1012,12 +1028,12 @@
         <state relative-caret-position="7689">
           <caret line="250" column="48" lean-forward="true" selection-start-line="250" selection-start-column="48" selection-end-line="250" selection-end-column="48" />
           <folding>
-            <marker date="1507158277187" expanded="false" signature="7367:7374" ph=" { " />
-            <marker date="1507158277187" expanded="false" signature="7404:7409" ph=" }" />
-            <marker date="1507158277187" expanded="false" signature="24999:25006" ph=" { " />
-            <marker date="1507158277187" expanded="false" signature="25037:25042" ph=" }" />
-            <marker date="1507158277187" expanded="false" signature="25321:25328" ph=" { " />
-            <marker date="1507158277187" expanded="false" signature="25359:25364" ph=" }" />
+            <marker date="1507163240033" expanded="false" signature="7367:7374" ph=" { " />
+            <marker date="1507163240033" expanded="false" signature="7404:7409" ph=" }" />
+            <marker date="1507163240033" expanded="false" signature="25017:25024" ph=" { " />
+            <marker date="1507163240033" expanded="false" signature="25055:25060" ph=" }" />
+            <marker date="1507163240033" expanded="false" signature="25339:25346" ph=" { " />
+            <marker date="1507163240033" expanded="false" signature="25377:25382" ph=" }" />
           </folding>
         </state>
       </provider>
@@ -1318,21 +1334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4335">
-          <caret line="376" column="58" lean-forward="false" selection-start-line="376" selection-start-column="58" selection-end-line="376" selection-end-column="58" />
-          <folding>
-            <marker date="1507158277187" expanded="false" signature="7367:7374" ph=" { " />
-            <marker date="1507158277187" expanded="false" signature="7404:7409" ph=" }" />
-            <marker date="1507158277187" expanded="false" signature="24999:25006" ph=" { " />
-            <marker date="1507158277187" expanded="false" signature="25037:25042" ph=" }" />
-            <marker date="1507158277187" expanded="false" signature="25321:25328" ph=" { " />
-            <marker date="1507158277187" expanded="false" signature="25359:25364" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://MODULES/mdl-Code">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -1444,6 +1445,21 @@
         <state relative-caret-position="330">
           <caret line="90" column="31" lean-forward="false" selection-start-line="90" selection-start-column="31" selection-end-line="90" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="291" column="94" lean-forward="false" selection-start-line="291" selection-start-column="94" selection-end-line="291" selection-end-column="94" />
+          <folding>
+            <marker date="1507163240033" expanded="false" signature="7367:7374" ph=" { " />
+            <marker date="1507163240033" expanded="false" signature="7404:7409" ph=" }" />
+            <marker date="1507163240033" expanded="false" signature="25017:25024" ph=" { " />
+            <marker date="1507163240033" expanded="false" signature="25055:25060" ph=" }" />
+            <marker date="1507163240033" expanded="false" signature="25339:25346" ph=" { " />
+            <marker date="1507163240033" expanded="false" signature="25377:25382" ph=" }" />
+          </folding>
         </state>
       </provider>
     </entry>
